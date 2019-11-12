@@ -3633,7 +3633,7 @@ Redis以`MULTI` 命令的执行标记着事务的开始：
 
 这个命令唯一做的就是， 将客户端的 `REDIS_MULTI` 选项打开， 让客户端从非事务状态切换到事务状态。
 
-![redis开始事务](./images/redis开始事务.svg)
+![redis开始事务](./images/redis_start_transaction.svg)
 
 #### 命令入队
 
@@ -3650,7 +3650,7 @@ redis> GET sayhi
 QUEUED
 ```
 
-![redis命令入队](./images/redis命令入队.png)
+![redis命令入队](./images/redis_orders_to_join_the_team.png)
 
 事务队列是一个存储数组的集合，每个元素（数组）都包含三个属性;
 
@@ -3722,7 +3722,7 @@ Redis 的 `SUBSCRIBE` 命令可以让客户端订阅任意数量的频道， 每
 
 下图展示了频道 `redisChannel` ， 以及订阅这个频道的三个客户端 —— `client1` 、 `client2` 和 `client3` 之间的关系模型：
 
-![发布订阅模型](./images/发布订阅模型.png)
+![发布订阅模型](./images/publish_and_subscribe_mode.png)
 
 ### 8.2 频道创建及订阅过程
 
@@ -3791,7 +3791,7 @@ Master接到命令启动后台的存盘进程，同时收集所有接收到的�
 
 反客为主的自动版，能够后台监控主机是否故障，如果故障了根据投票数自动将从库转换为主库
 
-![哨兵模式.jpeg](./images/哨兵模式.jpeg)
+![哨兵模式.jpeg](./images/sentinel_mode.jpeg)
 
 这里的哨兵有两个作用
 
@@ -3802,7 +3802,7 @@ Master接到命令启动后台的存盘进程，同时收集所有接收到的�
 
 **故障切换（failover）**的过程: 假设主服务器宕机，哨兵1先检测到这个结果，系统并不会马上进行failover过程，仅仅是哨兵1主观的认为主服务器不可用，这个现象成为**主观下线**。当后面的哨兵也检测到主服务器不可用，并且数量达到一定值时，那么哨兵之间就会进行一次投票，投票的结果由一个哨兵发起，进行failover操作。切换成功后，就会通过发布订阅模式，让各个哨兵把自己监控的从服务器实现切换主机，这个过程称为**客观下线**。这样对于客户端而言，一切都是透明的。
 
-![sentinel高可用.jpg](./images/sentinel高可用.jpg)
+![sentinel高可用.jpg](./images/sentinel_high_availability.jpg)
 
 在redis的安装目录下有一个`sentinel.conf`配置文件因描述过多摘除部分介绍：
 
@@ -3932,19 +3932,19 @@ sentinel client-reconfig-script <master-name> <script-path>
 
 #### 三个定时监控任务
 
-![三个定时任务](./images/三个定时任务.jpg)
+![三个定时任务](./images/three_scheduled_tasks.jpg)
 
 #### 主观下线和客观下线
 
-![主观下线和客观下线](./images/主观下线和客观下线.jpg)
+![主观下线和客观下线](./images/subjective_offline_and_objective_offline.jpg)
 
 #### sentinel leader选举
 
-![sentinel leader选举](./images/sentinelLeader选举.jpg)
+![sentinel leader选举](./images/sentinelleader_election.jpg)
 
 #### 故障转移
 
-![故障转移](./images/故障转移.jpg)
+![故障转移](./images/failover.jpg)
 
 #### sentinel模式的一些注意点
 
@@ -3952,7 +3952,7 @@ sentinel client-reconfig-script <master-name> <script-path>
 - 节点运维
 - 高可用读写分离
 
-![sentinel模式的一些注意点](./images/sentinel模式的一些注意点.jpg)
+![sentinel模式的一些注意点](./images/some_notes_on_sentinel_pattern.jpg)
 
 #### 哨兵模式的缺点
 
@@ -4271,9 +4271,9 @@ public void testRedisManager(){
 
 ## 11.关于锁补充
 
-**表级锁：**开销小，加锁快；不会出现死锁；锁定粒度大，发生锁冲突的概率最高，并发度最低。 
-**行级锁：**开销大，加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概率最低，并发度也最高。 
-**页面锁：**开销和加锁时间界于表锁和行锁之间；会出现死锁；锁定粒度界于表锁和行锁之间，并发度一般 
+**表级锁** :开销小，加锁快；不会出现死锁；锁定粒度大，发生锁冲突的概率最高，并发度最低。 
+**行级锁** :开销大，加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概率最低，并发度也最高。 
+**页面锁** :开销和加锁时间界于表锁和行锁之间；会出现死锁；锁定粒度界于表锁和行锁之间，并发度一般 
 
 悲观锁：每次获取数据的时候，都会担心数据被修改，所以每次获取数据的时候都会进行加锁，确保在自己使用的过程中数据不会被别人修改，直接将整张表上锁，使用完成后进行数据解锁。由于数据进行加锁，期间对该数据进行读写的其他线程都会进行等待。
 
@@ -4285,8 +4285,8 @@ public void testRedisManager(){
 
 InnoDB实现了以下两种类型的行锁。
 
-- **共享锁（s）：又称读锁。**允许一个事务去读一行，阻止其他事务获得相同数据集的排他锁。若事务T对数据对象A加上S锁，则事务T可以读A但不能修改A，其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。
-- **排他锁（Ｘ）：又称写锁。**允许获取排他锁的事务更新数据，阻止其他事务取得相同的数据集共享读锁和排他写锁。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，其他事务不能再对A加任何锁，直到T释放A上的锁。
+- **共享锁（s）又称读锁**允许一个事务去读一行，阻止其他事务获得相同数据集的排他锁。若事务T对数据对象A加上S锁，则事务T可以读A但不能修改A，其他事务只能再对A加S锁，而不能加X锁，直到T释放A上的S锁。这保证了其他事务可以读A，但在T释放A上的S锁之前不能对A做任何修改。
+- **排他锁（Ｘ）又称写锁**允许获取排他锁的事务更新数据，阻止其他事务取得相同的数据集共享读锁和排他写锁。若事务T对数据对象A加上X锁，事务T可以读A也可以修改A，其他事务不能再对A加任何锁，直到T释放A上的锁。
 - 对于共享锁大家可能很好理解，就是多个事务只能读数据不能改数据。 
   对于排他锁大家的理解可能就有些差别，我当初就犯了一个错误，以为排他锁锁住一行数据后，其他事务就不能读取和修改该行数据，其实不是这样的。排他锁指的是一个事务在一行数据加上排他锁后，其他事务不能再在其上加其他的锁。mysql InnoDB引擎默认的修改数据语句：**update,delete,insert都会自动给涉及到的数据加上排他锁，select语句默认不会加任何锁类型**，如果加排他锁可以使用select …for update语句，加共享锁可以使用select … lock in share mode语句。**所以加过排他锁的数据行在其他事务种是不能修改数据的，也不能通过for update和lock in share mode锁的方式查询数据，但可以直接通过select …from…查询数据，因为普通查询没有任何锁机制。**
 
