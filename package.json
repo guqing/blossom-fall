@@ -1,0 +1,15 @@
+{
+  "name": "night-crying",
+  "version": "1.0.0",
+  "author": "guqing",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "prismjs": "^1.17.1",
+    "vuepress": "1.2.0",
+    "vuepress-theme-reco": "1.1.1"
+  },
+  "description": "a Java notes guide"
+}
