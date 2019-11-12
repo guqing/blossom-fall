@@ -15,7 +15,7 @@ module.exports = {
         items: [
           { text: 'GitHub', link: 'https://github.com/guqing', icon: 'reco-github' },
           { text: '微博', link: 'https://weibo.com/guqing3478520', icon: 'reco-weibo' },
-          { text: '掘金', link: 'https://www.cnblogs.com/luanhewei/', icon: 'reco-juejin' },
+          { text: '掘金', link: 'https://juejin.im/user/5da81147e51d45249d47f816', icon: 'reco-juejin' },
           { text: '个人博客', link: 'https://www.guqing.xyz', icon: 'reco-blog' },
         ]
       },
