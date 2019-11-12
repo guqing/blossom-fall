@@ -1,5 +1,4 @@
 module.exports = {
-  base: '/blossom-fall/',
   title: "Blossomfall",
   description: 'A Java notes',
   dest: 'public',
