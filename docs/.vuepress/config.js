@@ -1,5 +1,5 @@
 module.exports = {
-  title: "NightCrying",
+  title: "Blossomfall",
   description: 'A Java notes',
   dest: 'public',
   head: [
@@ -19,9 +19,9 @@ module.exports = {
           { text: '个人博客', link: 'https://www.guqing.xyz', icon: 'reco-blog' },
         ]
       },
-      { text: 'GitHub', link: 'https://github.com/guqing/night-crying', icon: 'reco-github' },
+      { text: 'GitHub', link: 'https://github.com/guqing/blossom-fall', icon: 'reco-github' },
     ],
-    logo: '/head.jpg',
+    logo: '/head.png',
     // 搜索设置
     search: true,
     searchMaxSuggestions: 10,

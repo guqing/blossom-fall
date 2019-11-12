@@ -1,6 +1,6 @@
 ---
 home: true
-bgImage: '/hero.png'
+heroImage: /head.png
 isShowTitleInHome: false
 actionText: 快速上手 →
 actionLink: /views/
