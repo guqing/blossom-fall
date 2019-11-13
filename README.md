@@ -5,18 +5,20 @@
 </p>
 
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/vuepress-1.2.0-brightgreen" alt="vuepress-version"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-FA759E" alt="Blossomfall"></a>
-  <a href="#"><img src="https://img.shields.io/badge/Author-guqing-3EAF7C" alt="author-guqing"></a>
-  <a href="#">
+  <a href="https://plum.guqing.me"><img src="https://img.shields.io/badge/vuepress-1.2.0-brightgreen" alt="vuepress-version"></a>
+  <a href="https://plum.guqing.me"><img src="https://img.shields.io/badge/Java-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-FA759E" alt="title Blossomfall"></a>
+  <a href="https://plum.guqing.me"><img src="https://img.shields.io/badge/Author-guqing-3EAF7C" alt="author guqing"></a>
+  <a href="https://plum.guqing.me">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/guqing/blossom-fall"></a>
+  <a href="https://app.netlify.com/sites/plum-fall/deploys">
+    <img alt="Netlify Status" src="https://api.netlify.com/api/v1/badges/a75363e3-11cb-48be-bb95-c5bf537695af/deploy-status"></a>
 </p>
 
 ## Introduce
 
 1. 这是一个Java学习笔记仓库，旨在保存自己Java之所学成果；
 2. 尚在不断完善中,其中部分取自他人,但由于时间久远忘记出自哪里了,如果发现是您的请告诉我；
-3. 在线阅读：[Blossomfall]()
+3. 在线阅读：[Blossomfall](https://plum.guqing.me)
 
 ## Catalog
 

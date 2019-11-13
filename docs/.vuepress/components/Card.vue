@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="card-wrapper">
     <a :href="item.url" class="card" v-for="(item, index) in dataSource" :key="index">
       <div class="card-title">{{ item.title }}</div>
       <div class="card-content">{{ item.content }}</div>
@@ -31,14 +31,24 @@ export default {
   text-decoration: none!important;
 }
 
+.card-wrapper:after {
+  content:"";
+  display:block;
+  height:0;
+  clear:left;
+  visibility:hidden;
+}
+
 .card{
   width: 30%;
   display: block;
   padding: 15px;
   height: 150px;
-  background: paleturquoise;
+  background: #fffff1;
   border-radius: 10px;
   position: relative;
+  float: left;
+  margin: 0 15px 15px 0;
 }
 
 .card-title{

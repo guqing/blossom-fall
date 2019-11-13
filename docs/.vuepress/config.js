@@ -1,6 +1,6 @@
 module.exports = {
   title: "Blossomfall",
-  description: 'A Java notes',
+  description: 'Complete learning notes,readings at any time, knowledge review',
   dest: 'public',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
