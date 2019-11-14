@@ -1,4 +1,4 @@
-# Springboot核心原理
+# SpringBoot核心原理
 
 ## 1. Spring Boot 简介
 
@@ -35,7 +35,7 @@ http://blog.cuicc.com/blog/2015/07/22/microservices/
 4. 故障隔离，一个服务出现问题不会影响整个应用；
 5. 不会受限于任何技术栈。
 
-
+![微服务一站式解决方案](./images/3887018341313.png)
 
 ## 3. 环境准备
 
@@ -344,19 +344,19 @@ J2EE的整体整合解决方案和自动配置都在`spring-boot-autoconfigure-2
 
 使用`Spring Initializer`创建向导快速创建一个Spring Boot项目，IDEA和Spring提供的STS都支持创建向导
 
-![springboot创建向导](./images/springboot创建向导.png)
+![springboot创建向导](./images/13954813081.png)
 
 然后会看到如下界面选中自己使用的`jdk`版本然后执行`Next`
 
-![springboot创建向导1](./images/springboot创建向导1.png)
+![springboot创建向导1](./images/4139810813.png)
 
 填写项目相关信息然后下一步
 
-![springboot创建向导2](./images/springboot创建向导2.png)
+![springboot创建向导2](./images/123848103831.png)
 
 选择自己需要的模块，比如web模块或者数据库模块，安全，数据校验等，然后执行下一步：
 
-![springboot创建向导3](./images/springboot创建向导3.png)
+![springboot创建向导3](./images/823139831081.png)
 
 然后默认直接完成即可，IDEA会联网自动下载所需的依赖。
 
@@ -366,11 +366,11 @@ J2EE的整体整合解决方案和自动配置都在`spring-boot-autoconfigure-2
 https://start.spring.io
 ```
 
-![springboot通过网站快速创建项目.png](./images/springboot通过网站快速创建项目.png)
+![springboot通过网站快速创建项目.png](./images/21388108311.png)
 
 默认生成的Spring Boot项目，目录结构说明：
 
-![快速创建的springboot项目目录结构](./images/快速创建的springboot项目目录结构.png)
+![快速创建的springboot项目目录结构](./images/29318103887841983.png)
 
 - 主程序已经生成好了，我们只需要关心自己的项目逻辑即可
 
@@ -574,7 +574,7 @@ person.dog.age=5
 
 如果输出结果出现乱码需要在IDEA编辑器设置编码
 
-![设置idea编辑器编码](./images/设置idea编辑器编码.png)
+![设置idea编辑器编码](./images/58237313813.png)
 
 如果不使用`@ConfigurationProperties`注解，也可以使用`@Value`的方式获取配置文件中的值,@Value的key读取的是配置文件中的key
 
@@ -822,9 +822,9 @@ spring:
 
    在IDEA中可以在编辑器直接设置命令行参数和虚拟机参数：
 
-![配置文件启动参数设置1](./images/配置文件启动参数设置1.png)
+![配置文件启动参数设置1](./images/288348190387.png)
 
-![配置文件启动参数设置2](./images/配置文件启动参数设置2.png)
+![配置文件启动参数设置2](./images/883810937571.png)
 
 ### 7.9 配置文件的加载位置
 
@@ -841,7 +841,7 @@ spring:
 以上是按照优先级从高到低的顺序，所有位置的文件都会被加载，高优先级配置内容会覆盖低优先级配置内容，导致互补配置。
 我们也可以通过配置spring.config.location来改变默认配置
 
-![配置文件的加载路径](./images/配置文件的加载路径.png)
+![配置文件的加载路径](./images/2973718384371.png)
 
 还可以通过`spring.config.location`来改变默认的配置文件的配置，比如项目打包以后可以使用命令行参数的形式，启动项目时指定配置文件的新配置；指定的配置文件和默认加载的这些配置文件会共同起作用，形成互补配置。
 
@@ -1225,7 +1225,7 @@ public class HelloWorld {
 
 统一日志记录，即使是别的框架和我一起统一使用slf4j
 
-![统一日志处理legacy.png](./images/统一日志处理legacy.png)
+![统一日志处理legacy.png](./images/483839381308.png)
 
 **如何让系统中所有的体制都统一到slf4j**
 
@@ -1257,9 +1257,9 @@ SpringBoot使用它来做日志功能：
 
 SpringBoot底层日志依赖关系：
 
-![其他日志转为slf4j](./images/其他日志转为slf4j.png)
+![其他日志转为slf4j](./images/384713987491084.png)
 
-![日志排除依赖](./images/日志排除依赖.png)
+![日志排除依赖](./images/4139481903851.png)
 
 总结：
 
@@ -1518,7 +1518,7 @@ spring.resources.static-locations=classpath:/resources/
 
 JSP、Velocity、Freemarker、Thymeleaf;
 
-![模板引擎原理图](./images/模板引擎原理图.png)
+![模板引擎原理图](./images/213002388471.png)
 
 SpringBoot推荐使用Thymeleaf
 
@@ -1684,7 +1684,7 @@ public ModelAndView success() {
 | `th:vspace`             | `th:width`            | `th:wrap`           |
 | `th:xmlbase`            | `th:xmllang`          | `th:xmlspace`       |
 
-![thymeleaf标签说明](./images/thymeleaf标签说明.png)
+![thymeleaf标签说明](./images/9238108131.png)
 
 #### 10.4.2 能写哪些表达式
 
@@ -1937,7 +1937,7 @@ public class WebMvcAutoConfiguration {
 
 1.编写或计划配置文件，抽取页面需要显示的国际化消息
 
-![国际化配置文件](./images/国际化配置文件.png)
+![国际化配置文件](./images/1923013890173.png)
 
 2. Spring Boot自动配置好了管理国际化资源文件的组件
 
@@ -1974,7 +1974,7 @@ spring.messages.basename=i18n.login
 
 4. 去页面取到国际化配置文件的值(使用Thymeleaf模板引擎)
 
-![页面取国际化的值](./images/页面取国际化的值.png)
+![页面取国际化的值](./images/551481038414.png)
 
 如果遇到乱码问题请检查`properties`配置文件编码格式。
 
@@ -2197,11 +2197,11 @@ public void addInterceptors(InterceptorRegistry registry) {
 
 默认效果：
 
-![springboot默认的ErrorPage](./images/springboot默认的ErrorPage.png)
+![springboot默认的ErrorPage](./images/13845810831.png)
 
 2. 如果是其他客户端，默认响应一个json数据
 
-![其他客户端访问出错后响应的数据](./images/其他客户端访问出错后响应的数据.png)
+![其他客户端访问出错后响应的数据](./images/882183781384134.png)
 
 原理：
 
@@ -2427,7 +2427,7 @@ private ModelAndView resolveResource(String viewName, Map<String, Object> model)
 2. 没有模板引擎（模板引擎找不到这个页面），静态资源文件夹下找。
 3. 以上都没有错误页面默认就是来到springboot的错误提示页面
 
-![404错误页面.png](./images/404错误页面.png)
+![404错误页面.png](./images/404-error-page.png)
 
 #### 如何定制错误的数据
 
@@ -2468,7 +2468,7 @@ public class MyExceptionHandler {
 
 但是还有点问题,出错了状态码还是200：
 
-![自定义异常处理器处理自定义响应数据](./images/自定义异常处理器处理自定义响应数据.png)
+![自定义异常处理器处理自定义响应数据](./images/23584193813.png)
 
 再次改进，设置自己的状态码
 
@@ -2570,11 +2570,11 @@ public class MyErrorAttributes extends DefaultErrorAttributes {
 
 客户端的效果：
 
-![自定义异常信息和错误响应自适应](./images/自定义异常信息和错误响应自适应.png)
+![自定义异常信息和错误响应自适应](./images/41383210380313.png)
 
 浏览器效果：
 
-![自定义异常处理器处理自定义响应数据浏览器效果.png](./images/自定义异常处理器处理自定义响应数据浏览器效果.png)
+![自定义异常处理器处理自定义响应数据浏览器效果.png](./images/31389238130.png)
 
 响应的自适应，是通过定制`ErrorAttributes`来实现的，自定义异常信息可以通过自定义异常来实现然后将其捆绑到自定义的`ErrorAttributes`，来达到最终的效果
 
@@ -2584,7 +2584,7 @@ public class MyErrorAttributes extends DefaultErrorAttributes {
 
 SpringBoot默认使用Tomcat作为嵌入式的Servlet容器
 
-![springboot默认使用嵌入式的tomcat容器](./images/springboot默认使用嵌入式的tomcat容器.png)
+![springboot默认使用嵌入式的tomcat容器](./images/3113131451.png)
 
 ### 13.1 问题：
 
@@ -2754,19 +2754,19 @@ public DispatcherServletRegistrationBean dispatcherServletRegistration(Dispatche
 Jetty（更适合长连接，比如websocket）
 Undertow（不支持JSP）
 
-![springboot默认支持的容器.png](./images/springboot默认支持的容器.png)
+![springboot默认支持的容器.png](./images/813810380131.png)
 
 Tomcat是默认使用的，如果想使用其他容器，先排除tomcat依赖
 
-![排除tomcat依赖](./images/排除tomcat依赖.png)
+![排除tomcat依赖](./images/92739513741.png)
 
 然后再引入其他容器比如Jetty
 
-![引入jetty容器](./images/引入jetty容器.png)
+![引入jetty容器](./images/238379138108313.png)
 
 然后就切换成功了，启动起来看一下日志：
 
-![启动jetty服务器](./images/启动jetty服务器.png)
+![启动jetty服务器](./images/58283719371.png)
 
 如果想切换undertow也是一样，排除tomcat依赖引入下面的依赖
 
@@ -2854,7 +2854,7 @@ public interface ServletWebServerFactory {
 }
 ```
 
-![容器工厂创建三个容器](./images/容器工厂创建三个容器.png)
+![容器工厂创建三个容器](./images/582837410384.png)
 
 以`TomcatServletWebServerFactory`为例，只要引入了tomcat的依赖容器,springboot就会`new TomcatServletWebServerFactory();`，而再这个类中有`getWebServer`方法
 
@@ -2944,7 +2944,7 @@ public WebServerFactoryCustomizer<ConfigurableWebServerFactory> webServerFactory
 
 再次打开容器的自动配置类`ServletWebServerFactoryAutoConfiguration`，它使用`Import`导入了一些类,其中就有`BeanPostProcessorsRegistrar`(后置处理器的注册器)，它的也导入一些组件，后置处理器的作用是在bean初始化前后(创建完对象还没有给属性赋值）执行初始化工作。
 
-![springboot如何修改servlet容器的配置](./images/springboot如何修改servlet容器的配置.png)
+![springboot如何修改servlet容器的配置](./images/213887018311.png)
 
 可以看到
 
@@ -2988,11 +2988,11 @@ private void postProcessBeforeInitialization(WebServerFactory webServerFactory) 
 
 在`ServletWebServerFactoryConfiguration`类中的下面方法上打上断点
 
-![跟踪容器初始化过程第一个断点](./images/跟踪容器初始化过程第一个断点.png)
+![跟踪容器初始化过程第一个断点](./images/8901238908301.png)
 
 然后再`TomcatServletWebServerFactory`类获取容器的方法上打第二个断点
 
-![跟踪容器初始化过程第二个断点.png](./images/跟踪容器初始化过程第二个断点.png)
+![跟踪容器初始化过程第二个断点.png](./images/123819080.png)
 
 然后`debug`启动项目开始分析容器的启动原理如下：
 
@@ -3168,7 +3168,7 @@ Servlet3.0规范（百度网盘链接：http://pan.baidu.com/s/1mijcyWK）：
 1. 启动tomcat
 2. Spring的Web模块中就有这个文件，内容为：`org.springframework.web.SpringServletContainerInitializer`
 
-![servlet3.0规范中的ServletContainerInitializer](./images/servlet3.0规范中的ServletContainerInitializer.png)
+![servlet3.0规范中的ServletContainerInitializer](./images/3382137918331.png)
 
 3. 根据第二点，服务器启动时就会创建`SpringServletContainerInitializer`的实例对象
 
@@ -3181,7 +3181,7 @@ public class SpringServletContainerInitializer implements ServletContainerInitia
 
 4. 每一个创建好的`webAppInitializer`类型的实例都调用自己的`onStartup(servletContext);`方法,而`webAppInitializer`是一个接口它的实现类就有如下：
 
-![WebApplicationInitializer的实现类](./images/WebApplicationInitializer的实现类.png)
+![WebApplicationInitializer的实现类](./images/313831801313.png)
 
 5. 相当于我们的`SpringBootServletInitializer`的类会被创建对象，并执行`onStartup`方法,所以要求我们写一个`SpringBootServletInitializer`的实现类这样就会再服务器启动时被创建实例并且执行`onStartup`方法。
 6. `SpringBootServletInitializer`执行自己的`onStartup`方法，然后使用`this.createRootApplicationContext(servletContext);`创建根容器
@@ -3303,7 +3303,7 @@ Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级�
 
 Docker支持将软件编译成一个镜像；然后在镜像中各种软件做好配置，将镜像发布出去，其他使用者可以直接使用这个镜像运行中的这个镜像称为容器，容器启动是非常快速的。类似windows里面的ghost操作系统，安装好后什么都有了；
 
-![docker原理图](./images/docker原理图.jpg)
+![docker原理图](./images/2313880138.jpg)
 
 ### 15.2 核心概念
 
@@ -3315,7 +3315,7 @@ docker主机（Host)：一个物理或者虚拟的机器用于执行
 Docker 守护进程和容器。
 docker仓库（Registry）：Docker仓库用来保存镜像，可以理解为代码控制中的代码仓库。Docker Hub（https://hub.docker.com）提供了庞大的镜像集合供使用。
 
-![docker三大核心图解.png](./images/docker三大核心图解.png)
+![docker三大核心图解.png](./images/32123138913.png)
 
 使用Docker的步骤：
 
@@ -3588,7 +3588,7 @@ docker run -p 6380:6379 --name myredis -d redis redis-server --appendonly yes
 
 **注意：如果是远程服务器比如阿里云的，处理端口映射以外，还需要去阿里云的控制台设置防火墙规则**，比如：
 
-![阿里云控制台设置防火墙规则](./images/阿里云控制台设置防火墙规则.png)
+![阿里云控制台设置防火墙规则](./images/alicloud-console-sets-firewall-rules.png)
 
 ## 16. SpringBoot与数据访问
 
@@ -3900,7 +3900,7 @@ public class DruidConfig {
 
 然后就可以根据配置，打开`localhost:8080/druid/`来到Druid的后台管理登陆页面，使用配置的用户名和密码登陆
 
-![druid日志监控后台](./images/druid日志监控后台.png)
+![druid日志监控后台](./images/1239379887313.png)
 
 ### 16.4 整合Mybatis
 
@@ -4095,7 +4095,7 @@ public interface EmployeeMapper {
 
 2. 创建mybatis的映射Mapper映射配置文件`mybatis/mapper/EmployeeMapper.xml`，在创建`mybatis/mybatis-config.xml`(相当于原来的`SqlMapConfig.xml`内容根据需要配置，能配什么和以前使用mybatis一样)
 
-![mybatis的配置](./images/mybatis的配置.png)
+![mybatis的配置](./images/1238410831.png)
 
 EmployeeMapper.xml文件内容如下：
 
@@ -4419,11 +4419,11 @@ private void initialize(Object[] sources){
 
 6个Initializers:
 
-![6个Initializers](./images/6个Initializers.png)
+![6个Initializers](./images/6-Initializers.png)
 
 10个监听器:
 
-![10个listener](./images/10个listener.png)
+![10个listener](./images/10-listener.png)
 
 `initialize`方法执行完毕，SpringApplication对象就创建完毕了。
 
@@ -4567,7 +4567,7 @@ public class MySpringApplicationRunListener implements SpringApplicationRunListe
 
 这两个实现类，根据启动流程时的分析会从类路径的`META-INF/spring.factories`找，在springboot启动时将其扫描到容器中，所以需要在`classpth`下创建一个``META-INF/spring.factories`
 
-![在META-INF下创建spring.factorues文件](./images/在META-INF下创建spring.factorues文件.png)
+![在META-INF下创建spring.factorues文件](./images/1385481038313.png)
 
 然后在`spring.factories`中配置刚创建的两个实现类（`\代表换行`）
 
@@ -4755,7 +4755,7 @@ xyz.guqing.starter.HelloServiceAutoConfiguration
 
 4. 将两个项目安装到`Maven`仓库中
 
-![自定义starter](./images/自定义starter.png)
+![自定义starter](./images/34238901383.png)
 
 然后就可以创建一个测试项目，使用我么自定义的`starter`了
 
@@ -4798,7 +4798,7 @@ guqing.hello.suffix=这是一段后缀
 这是一段前缀-张三-这是一段后缀
 ```
 
-# Springboot 高级与进阶
+# SpringBoot高级与进阶
 
 ## 1 Spring Boot 与缓存
 
@@ -4812,7 +4812,7 @@ guqing.hello.suffix=这是一段后缀
 - `Entry`是一个存储在`Cache`中的`key-value`对。
 - `Expiry`每一个存储在`Cache`中的条目有一个定义的有效期。一旦超过这个时间，条目为过期的状态。一旦过期，条目将不可访问、更新和删除。缓存有效期可以通过`ExpiryPolicy`设置。
 
-![缓存与系统架构](assets/%E7%BC%93%E5%AD%98%E4%B8%8E%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84.png)
+![缓存与系统架构](./images/springboot/9281370813131.png)
 
 ### 1.2 Spring缓存抽象
 
@@ -4821,14 +4821,11 @@ guqing.hello.suffix=这是一段后缀
 - `Cache`接口为缓存的组件规范定义，包含缓存的各种操作集合；
 - `Cache`接口下`Spring`提供了各种`xxxCache`的实现；如`RedisCache，EhCacheCache`，`ConcurrentMapCache`等；
 - 每次调用需要缓存功能的方法时，`Spring`会检查检查指定参数的指定的目标方法是否已经被调用过，如集有就直接从缓存中获取方法调用后的结巢，如集没有就调用方法并缓存结果后返回给用户。下次调用直接从缓存中获取。
-- 使用`Spring`缓存抽象时我们需要关注以下两点；
-  1、确定方法需要被缓存以及他们的缓存策略
-  2、从缓存中读取之前缓存存储的数据
+- 使用`Spring`缓存抽象时我们需要关注以下两点； 1、确定方法需要被缓存以及他们的缓存策略 2、从缓存中读取之前缓存存储的数据
 
 ### 1.3 搭建缓存测试环境测试缓存使用
 
 1. 使用SpringBoot的初始化向导新建一个工程，导入`web`、`mysql`、`mybatis`、`cache`的启动器
-
 2. 然后新建一个数据库`spring_cache`,创建两张表`department`和`employee`
 3. 创建实体类
 
@@ -4838,7 +4835,6 @@ public class Department {
     private String departmentName;
 }
 ```
-
 ```java
 public class Employee {
     private Integer id;
@@ -4849,8 +4845,7 @@ public class Employee {
     private Integer departmentId;
 }
 ```
-
-4. 创建Mapper
+1. 创建Mapper
 
 ```java
 public interface DepartmentMapper {
@@ -4869,7 +4864,6 @@ public interface DepartmentMapper {
     public int save(Department department);
 }
 ```
-
 ```java
 public interface EmployeeMapper {
     
@@ -4891,8 +4885,7 @@ public interface EmployeeMapper {
     public int save(Employee employee);
 }
 ```
-
-5. 配置主配置文件
+1. 配置主配置文件
 
 ```yaml
 spring:
@@ -4911,7 +4904,7 @@ logging:
     xyz.guqing.springboot.mapper: debug
 ```
 
-6. 创建Service
+1. 创建Service
 
 ```java
 @Service
@@ -4940,7 +4933,7 @@ public class EmployeeService {
 
 Department的service不写了
 
-7. 创建Controller
+1. 创建Controller
 
 ```java
 @RestController
@@ -4974,7 +4967,7 @@ public class Springboot01CacheApplication {
 }
 ```
 
-2. 在需要的地方标注缓存注解即可使用缓存
+1. 在需要的地方标注缓存注解即可使用缓存
 
 | 注解或类       | 功能                                                         |
 | -------------- | ------------------------------------------------------------ |
@@ -5044,13 +5037,13 @@ public @interface Cacheable {
   ```java
   @Cacheable(cacheNames = "employeeService",key="#root.mehotdName-#id")//key：方法名-参数
   public Employee get(Integer id){}
-  ```
-
+```
+  
   更多的取值参考下图:
 
-![@Cacheable的key属性使用说明](assets/@Cacheable%E7%9A%84key%E5%B1%9E%E6%80%A7%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E.png)
+![@Cacheable的key属性使用说明](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/513901313131.png?lastModify=1573739193)
 
--  `keyGenerator`: `key`的生成器，可以自己指定`key`的生成器的组件`id`,`key`与`keyGenerator`二选一
+- `keyGenerator`: `key`的生成器，可以自己指定`key`的生成器的组件`id`,`key`与`keyGenerator`二选一
 
 自己指定`keyGenerator`
 
@@ -5081,10 +5074,10 @@ public Employee get(Integer id){
 }
 ```
 
--  `cacheManager`: 缓存管理器，或者指定`cacheResolver`缓存解析器
--  `condition`:指定符合条件的情况下才缓存，例如：`condition="#a0>1"`表示第一个参数的值大于1才缓存
--  `unless`:排除，`unless`指定的条件不会被缓存,可以获取结果进行判断`#result`,例如`unless="#result==null"`
--  sync:是否使用异步缓存,默认为false,需要注意的是,如果开启异步,unless属性就不支持了
+- `cacheManager`: 缓存管理器，或者指定`cacheResolver`缓存解析器
+- `condition`:指定符合条件的情况下才缓存，例如：`condition="#a0>1"`表示第一个参数的值大于1才缓存
+- `unless`:排除，`unless`指定的条件不会被缓存,可以获取结果进行判断`#result`,例如`unless="#result==null"`
+- sync:是否使用异步缓存,默认为false,需要注意的是,如果开启异步,unless属性就不支持了
 
 #### @CachePut:
 
@@ -5136,11 +5129,11 @@ public class EmployeeController {
 
 请求`localhost:8080/get/1`，结果`name=张三`
 
-2. 在更新数据库的数据，`http://localhost:8080/update?name=齐天大圣孙悟空`，然后使用`employeeService.get(1);`方法查询缓存看缓存的内容,观察`name`是否还是`张三`，但是结果为`齐天大圣孙悟空`,显然`@CachePut`注解的使用，在更新数据库数据的同时也更新了缓存
+1. 在更新数据库的数据，`http://localhost:8080/update?name=齐天大圣孙悟空`，然后使用`employeeService.get(1);`方法查询缓存看缓存的内容,观察`name`是否还是`张三`，但是结果为`齐天大圣孙悟空`,显然`@CachePut`注解的使用，在更新数据库数据的同时也更新了缓存
 
 **但是需要注意的是`@CachePut`注解和`@Cacheable`的key生成策略要相同，否则存入缓存的数据的key和放入缓存的key不一致，更新时就找不到缓存，所以不会更新（以上我使用的都是`mykeyGenerator`自定以key生成策略），如果使用了方法名拼参数的方式时不行的因为执行不同的方法，key就不一样也获取不到缓存**
 
-3. `@CacheEvict`:缓存删除，通过key来指定清除哪一个缓存数据,在`@CacheEvict`又几个与其他不同的属性
+1. `@CacheEvict`:缓存删除，通过key来指定清除哪一个缓存数据,在`@CacheEvict`又几个与其他不同的属性
 
 ```java
 //指定为true，清除这个缓存中的所有数据
@@ -5168,11 +5161,12 @@ public int delete(@PathVariable("id") Integer id){
 }
 
 @GetMapping("/get/{id}")
-    public Employee get(@PathVariable("id") Integer id){
-        return employeeService.get(id);
-    }
-
+public Employee get(@PathVariable("id") Integer id){
+    return employeeService.get(id);
+}
 ```
+
+
 
 测试步骤：
 
@@ -5182,7 +5176,7 @@ public int delete(@PathVariable("id") Integer id){
 
 由于使用了`@CacheEvict`注解，如果正确的话应该数据库数据并且删除缓存中的数据`localhost:8080/delete/2`获取不到值
 
-3. `@Caching`注解，是一个组合注解，如下
+1. `@Caching`注解，是一个组合注解，如下
 
 ```java
 public @interface Caching {
@@ -5192,7 +5186,6 @@ public @interface Caching {
 
     CacheEvict[] evict() default {};
 }
-
 ```
 
 例如：
@@ -5210,10 +5203,9 @@ public @interface Caching {
 public Employee findByName(String name){
     return employeeMapper.findByName(name);
 }
-
 ```
 
-4. `@CacheConfig`注解,在每个需要注解的缓存的方法上都需要标注`cacheNames`或`value`之类的属性，而这些属性是公共的，所以可以使用`@CacheConfig`注解在类上，变成全局配置
+1. `@CacheConfig`注解,在每个需要注解的缓存的方法上都需要标注`cacheNames`或`value`之类的属性，而这些属性是公共的，所以可以使用`@CacheConfig`注解在类上，变成全局配置
 
 ```java
 public @interface CacheConfig {
@@ -5225,7 +5217,6 @@ public @interface CacheConfig {
 
     String cacheResolver() default "";
 }
-
 ```
 
 例如：
@@ -5258,9 +5249,8 @@ org.springframework.boot.autoconfigure.cache.SimpleCacheConfiguration
 org.springframework.boot.autoconfigure.cache.NoOpCacheConfiguration
 ```
 
-3. 上面这些配置类都会经过`@ConditionalOnBean(Cache.class)`,`@ConditionalOnMissingBean(CacheManager.class)`,`@gonditional(CacheCondition.class)`等条件判断，最终`SimpleCacheConfiguration`会默认生效，其他组件什么时候生效呢，当你导入了相应的组件以后就会生效，比如导入`EhCache`组件，`EhCacheCacheConfiguration`就会生效
-
-4. `SimpleCacheConfiguration`生效后它会给容器中添加一个`ConcurrentMapCacheManager`缓存管理组件
+1. 上面这些配置类都会经过`@ConditionalOnBean(Cache.class)`,`@ConditionalOnMissingBean(CacheManager.class)`,`@gonditional(CacheCondition.class)`等条件判断，最终`SimpleCacheConfiguration`会默认生效，其他组件什么时候生效呢，当你导入了相应的组件以后就会生效，比如导入`EhCache`组件，`EhCacheCacheConfiguration`就会生效
+2. `SimpleCacheConfiguration`生效后它会给容器中添加一个`ConcurrentMapCacheManager`缓存管理组件
 
 ```java
 @Bean
@@ -5297,7 +5287,7 @@ public Cache getCache(String name) {
 
 所以，`ConcurrentMapCacheManager`可以创建和获取`ConcurrentMapCache`类型的缓存组件。
 
-5. `ConcurrentMapCache`缓存组件拥有对缓存管理的方法,如下
+1. `ConcurrentMapCache`缓存组件拥有对缓存管理的方法,如下
 
 ```java
 public final String getName();
@@ -5314,7 +5304,6 @@ private Object serializeValue(SerializationDelegate serialization, Object storeV
 
 ```java
 private final ConcurrentMap<Object, Object> store;
-
 ```
 
 缓存数据就保存在`ConcurrentMap`中。
@@ -5328,18 +5317,16 @@ private final ConcurrentMap<Object, Object> store;
 public Employee get(Integer id){
     return employeeMapper.get(id);
 }
-
 ```
 
 1. 方法运行之前，先去查询Cache(缓存组件)，按照cacheNames指定的名称获取`Cache`(`CacheManager`先获取相应的缓存)
-2. 第一次获取缓存组件Cache为`null`没有创建过，`getCache`方法就会调用`createConcurrentMapCache(name)`方法创建一个`Cache`,然后把创建出来的`Cache`缓存组件使用`public void put(name,cache)`方法放到`ConcurrentMap`中，就是`ConcurrentMapCache`类中的`private final ConcurrentMap<Object, Object> store;`这个容器。
+2. 第一次获取缓存组件Cache为`null`没有创建过，`getCache`方法就会调用`createConcurrentMapCache(name)`方法创建一个`Cache`,然后把创建出来的`Cache`缓存组件使用`public void put(name,cache)`方法放到`ConcurrentMap`中，就是`ConcurrentMapCache`类中的`private final ConcurrentMap store;`这个容器。
 3. 去Cache中查找缓存的内容，使用一个key，默认是方法的参数,key是按照某种生成策略生成的,默认使用`keyGenerator`生成即`this.metadata.keyGenerator.generate(this.target,this.metadata.method,this.args)`但是`KeyGenerator`是一个接口实际调用的是`SimpleKeyGenerator`实现类生成的key,有了key就调用`lookup()`查找
 
 ```java
 protected Object lookup(Object key) {
     return this.store.get(key);
 }
-
 ```
 
 `SimpleKeyGenerator`生成key的策略：
@@ -5362,17 +5349,15 @@ public static Object generateKey(Object... params) {
         return new SimpleKey(params);
     }
 }
-
 ```
 
-4. 没有查找缓存就调用目标方法，发送sql语句查询数据库也就是我们自己写的`employeeMapper.get(id);`，从数据库查到结果以后，将数据放入到缓存
+1. 没有查找缓存就调用目标方法，发送sql语句查询数据库也就是我们自己写的`employeeMapper.get(id);`，从数据库查到结果以后，将数据放入到缓存
 
 ```java
 public void put(Object key, @Nullable Object value){
     //key默认是参数，value就是数据库查到的结果
     this.store.put(key, this.toStoreValue(value));
 }
-
 ```
 
 总结就是，@Cacheable标注的方法执行前，先来检查缓存中有没有这个数据，默认按照参数的值作为key去查询缓存，如果没有，就运行方法并将结果放入缓存,以后再调用方法且key在缓存中存在就会从缓存中获取数据
@@ -5386,10 +5371,9 @@ public void put(Object key, @Nullable Object value){
 
 1. 使用docker安装redis
 
-```shell
+```powershell
 sudo docker pull redis
 sudo docker run -d -p 6379:6379 --name myredis redis
-
 ```
 
 使用redis步骤:
@@ -5407,7 +5391,6 @@ sudo docker run -d -p 6379:6379 --name myredis redis
     <groupId>redis.clients</groupId>
     <artifactId>jedis</artifactId>
 </dependency>
-
 ```
 
 - 2.配置redis的host
@@ -5416,7 +5399,6 @@ sudo docker run -d -p 6379:6379 --name myredis redis
 spring:
   redis:
     host: 119.23.69.244
-
 ```
 
 同样Springboot为我们提供了简化操作的模板,我们使用模板来操作redis,如下只需要注入即可
@@ -5427,19 +5409,17 @@ StringRedisTemplate stringRedisTemplate;//操作字符串
 
 @Resource
 RedisTemplate redisTemplate;//k,v都是object
-
 ```
 
 使用模板操作五大数据类型的方法：
 
-```
+```java
 操作redis五大数据类型:
 > String(字符串)：opsForValue()
 > List(列表):opsForList()
 > Set(集合):opsForSet()
 > Hash(散列):opsForHash()
 > ZSet(有序集合):opsForZSet()
-
 ```
 
 **测试：**
@@ -5457,7 +5437,7 @@ public class Springboot01CacheApplicationTests {
     @Test
     public void testString() {
         //给redis中保存一个数据
-//        stringRedisTemplate.opsForValue().append("k1","v1");
+		//stringRedisTemplate.opsForValue().append("k1","v1");
         
         String value = stringRedisTemplate.opsForValue().get("k1");
         System.out.println(value);
@@ -5469,13 +5449,11 @@ public class Springboot01CacheApplicationTests {
         stringRedisTemplate.opsForList().leftPush("list1","b");
     }
 }
-
 ```
 
 如果使用操作对象的`RedisTemplate`模板，那么需要将对象序列化在缓存到`redis`，有两种方式
 
 - 1.自己将对象转为`json`
-
 - 2.`redisTemplate`默认的序列化规则
 
 自定义序列化规则：
@@ -5553,8 +5531,7 @@ public class Springboot01CacheApplicationTests {
 如果使用缓存注解时想将数据序列化为json保存？
 
 1. 引入redis的starter，CacheManager变成了RedisCacheManager
-
-2. 默认创建的`RedisCacheManager`操作`redis`的时候使用的是`RedisTemplate<Object,Object> redisTemplate`,它默认使用的是`JDK`的序列化机制
+2. 默认创建的`RedisCacheManager`操作`redis`的时候使用的是`RedisTemplate redisTemplate`,它默认使用的是`JDK`的序列化机制
 3. 经过以上分析，为了实现我们的需求，需要自定义`CacheManager`
 
 ```java
@@ -5635,11 +5612,9 @@ public class MyRedisConfig {
 2. 消息服务中两个重要概念：
 
 - 消息代理（message broker）
+- 目的地（destination） 当消息发送者发送消息以后，将由消息代理接管，消息代理保证消息传递到指定目的地。
 
-- 目的地（destination）
-  当消息发送者发送消息以后，将由消息代理接管，消息代理保证消息传递到指定目的地。
-
-3. 消息队列主要有两种形式的目的地
+1. 消息队列主要有两种形式的目的地
 
 - 1.队列（queue）：点对点消息通信（point-to-point）
 - 2.主题（topic）：发布（publish）/订阅（subscribe）消息通信
@@ -5648,73 +5623,61 @@ public class MyRedisConfig {
 
 #### 2.2.1 异步处理
 
-场景说明：用户注册后，需要发注册邮件和注册短信。传统的做法有两种 1.串行的方式；2.并行方式
-a、串行方式：将注册信息写入数据库成功后，发送注册邮件，再发送注册短信。以上三个任务全部完成后，返回给客户端。
+场景说明：用户注册后，需要发注册邮件和注册短信。传统的做法有两种 1.串行的方式；2.并行方式 a、串行方式：将注册信息写入数据库成功后，发送注册邮件，再发送注册短信。以上三个任务全部完成后，返回给客户端。
 
-![消息队列应用场景异步处理1](assets/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%861.png)
+![消息队列应用场景异步处理1](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/155810831013.png?lastModify=1573739193)
 
 b、并行方式：将注册信息写入数据库成功后，发送注册邮件的同时，发送注册短信。以上三个任务完成后，返回给客户端。与串行的差别是，并行的方式可以提高处理的时间
 
-![消息队列应用场景异步处理1](assets/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%862.png)
+![消息队列应用场景异步处理1](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/513809831131.png?lastModify=1573739193)
 
-设三个业务节点每个使用50毫秒钟，不考虑网络等其他开销，则串行方式的时间是150毫秒，并行的时间可能是100毫秒。
-因为CPU在单位时间内处理的请求数是一定的，假设CPU1秒内吞吐量是100次。则串行方式1秒内CPU可处理的请求量是7次（1000/150）。并行方式处理的请求量是10次（1000/100）
-小结：如以上案例描述，传统的方式系统的性能（并发量，吞吐量，响应时间）会有瓶颈。如何解决这个问题呢？
+设三个业务节点每个使用50毫秒钟，不考虑网络等其他开销，则串行方式的时间是150毫秒，并行的时间可能是100毫秒。 因为CPU在单位时间内处理的请求数是一定的，假设CPU1秒内吞吐量是100次。则串行方式1秒内CPU可处理的请求量是7次（1000/150）。并行方式处理的请求量是10次（1000/100） 小结：如以上案例描述，传统的方式系统的性能（并发量，吞吐量，响应时间）会有瓶颈。如何解决这个问题呢？
 
 引入消息队列，将不是必须的业务逻辑，异步处理。改造后的架构如下：
 
-![消息队列应用场景异步处理1](assets/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%863.png)
+![消息队列应用场景异步处理1](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/51380131313.png?lastModify=1573739193)
 
 #### 2.2.2 应用解耦
 
 场景说明：用户下单后，订单系统需要通知库存系统。传统的做法是，订单系统调用库存系统的接口。如下图：
 
-![消息队列应用场景应用解耦1.png](assets/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E5%BA%94%E7%94%A8%E8%A7%A3%E8%80%A61.png)
+![消息队列应用场景应用解耦1.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/5187913113131.png?lastModify=1573739193)
 
 传统模式的缺点：假如库存系统无法访问，则订单减库存将失败，从而导致订单失败，订单系统与库存系统耦合
 
 如何解决以上问题呢？引入应用消息队列后的方案，如下图：
 
-![消息队列应用场景应用解耦2.png](assets/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E5%BA%94%E7%94%A8%E8%A7%A3%E8%80%A62.png)
+![消息队列应用场景应用解耦2.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/138510831313.png?lastModify=1573739193)
 
-订单系统：用户下单后，订单系统完成持久化处理，将消息写入消息队列，返回用户订单下单成功
-库存系统：订阅下单的消息，采用拉/推的方式，获取下单信息，库存系统根据下单信息，进行库存操作
-假如：在下单时库存系统不能正常使用。也不影响正常下单，因为下单后，订单系统写入消息队列就不再关心其他的后续操作了。实现订单系统与库存系统的应用解耦
+订单系统：用户下单后，订单系统完成持久化处理，将消息写入消息队列，返回用户订单下单成功 库存系统：订阅下单的消息，采用拉/推的方式，获取下单信息，库存系统根据下单信息，进行库存操作 假如：在下单时库存系统不能正常使用。也不影响正常下单，因为下单后，订单系统写入消息队列就不再关心其他的后续操作了。实现订单系统与库存系统的应用解耦
 
 #### 2.2.3 流量削锋
 
- 流量削锋也是消息队列中的常用场景，一般在秒杀或团抢活动中使用广泛。
-应用场景：秒杀活动，一般会因为流量过大，导致流量暴增，应用挂掉。为解决这个问题，一般需要在应用前端加入消息队列。
-a、可以控制活动的人数
-b、可以缓解短时间内高流量压垮应用
+ 流量削锋也是消息队列中的常用场景，一般在秒杀或团抢活动中使用广泛。 应用场景：秒杀活动，一般会因为流量过大，导致流量暴增，应用挂掉。为解决这个问题，一般需要在应用前端加入消息队列。 a、可以控制活动的人数 b、可以缓解短时间内高流量压垮应用
 
-![消息队列应用场景流量肖峰1.png](assets/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E6%B5%81%E9%87%8F%E8%82%96%E5%B3%B01.png)
+![消息队列应用场景流量肖峰1.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/13831081313.png?lastModify=1573739193)
 
-用户的请求，服务器接收后，首先写入消息队列。假如消息队列长度超过最大数量，则直接抛弃用户请求或跳转到错误页面。
-秒杀业务根据消息队列中的请求信息，再做后续处理
+用户的请求，服务器接收后，首先写入消息队列。假如消息队列长度超过最大数量，则直接抛弃用户请求或跳转到错误页面。 秒杀业务根据消息队列中的请求信息，再做后续处理
 
 #### 2.2.4 日志处理
 
 日志处理是指将消息队列用在日志处理中，比如Kafka的应用，解决大量日志传输的问题。架构简化如下
 
-![消息队列应用场景日志处理1.png](assets/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E6%97%A5%E5%BF%97%E5%A4%84%E7%90%861.png)
+![消息队列应用场景日志处理1.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/138419081313.png?lastModify=1573739193)
 
-日志采集客户端，负责日志数据采集，定时写受写入Kafka队列
-Kafka消息队列，负责日志数据的接收，存储和转发
-日志处理应用：订阅并消费kafka队列中的日志数据 
+日志采集客户端，负责日志数据采集，定时写受写入Kafka队列 Kafka消息队列，负责日志数据的接收，存储和转发 日志处理应用：订阅并消费kafka队列中的日志数据 
 
 #### 2.2.5 消息通讯
 
-消息通讯是指，消息队列一般都内置了高效的通信机制，因此也可以用在纯的消息通讯。比如实现点对点消息队列，或者聊天室等
-点对点通讯：
+消息通讯是指，消息队列一般都内置了高效的通信机制，因此也可以用在纯的消息通讯。比如实现点对点消息队列，或者聊天室等 点对点通讯：
 
-![消息队列应用场景消息通讯1.png](assets/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E6%B6%88%E6%81%AF%E9%80%9A%E8%AE%AF1.png)
+![消息队列应用场景消息通讯1.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/23874108131.png?lastModify=1573739193)
 
 客户端A和客户端B使用同一队列，进行消息通讯。
 
 聊天室通讯
 
-![消息队列应用场景消息通讯2.png](assets/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E6%B6%88%E6%81%AF%E9%80%9A%E8%AE%AF2.png)
+![消息队列应用场景消息通讯2.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/2418901381133.png?lastModify=1573739193)
 
 客户端A，客户端B，客户端N订阅同一主题，进行消息发布和接收。实现类似聊天室效果。
 
@@ -5722,34 +5685,23 @@ Kafka消息队列，负责日志数据的接收，存储和转发
 
 #### 2.2.6 电商系统
 
-![消息队列应用场景电商系统1](assets/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E7%94%B5%E5%95%86%E7%B3%BB%E7%BB%9F1.jpg)
+![消息队列应用场景电商系统1](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/21383801380313.jpg?lastModify=1573739193)
 
-消息队列采用高可用，可持久化的消息中间件。比如Active MQ，Rabbit MQ，Rocket Mq。
-（1）应用将主干逻辑处理完成后，写入消息队列。消息发送是否成功可以开启消息的确认模式。（消息队列返回消息接收成功状态后，应用再返回，这样保障消息的完整性）
-（2）扩展流程（发短信，配送处理）订阅队列消息。采用推或拉的方式获取消息并处理。
-（3）消息将应用解耦的同时，带来了数据一致性问题，可以采用最终一致性方式解决。比如主数据写入数据库，扩展应用根据消息队列，并结合数据库方式实现基于消息队列的后续处理。
+消息队列采用高可用，可持久化的消息中间件。比如Active MQ，Rabbit MQ，Rocket Mq。 （1）应用将主干逻辑处理完成后，写入消息队列。消息发送是否成功可以开启消息的确认模式。（消息队列返回消息接收成功状态后，应用再返回，这样保障消息的完整性） （2）扩展流程（发短信，配送处理）订阅队列消息。采用推或拉的方式获取消息并处理。 （3）消息将应用解耦的同时，带来了数据一致性问题，可以采用最终一致性方式解决。比如主数据写入数据库，扩展应用根据消息队列，并结合数据库方式实现基于消息队列的后续处理。
 
 #### 2.2.7 日志收集系统
 
-![消息队列应用场景日志收集系统1.jpg](assets/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF%E6%97%A5%E5%BF%97%E6%94%B6%E9%9B%86%E7%B3%BB%E7%BB%9F1.jpg)
+![消息队列应用场景日志收集系统1.jpg](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/4138713131.jpg?lastModify=1573739193)
 
-分为Zookeeper注册中心，日志收集客户端，Kafka集群和Storm集群（OtherApp）四部分组成。
-Zookeeper注册中心，提出负载均衡和地址查找服务
-日志收集客户端，用于采集应用系统的日志，并将数据推送到kafka队列
-Kafka集群：接收，路由，存储，转发等消息处理
-Storm集群：与OtherApp处于同一级别，采用拉的方式消费队列中的数据
+分为Zookeeper注册中心，日志收集客户端，Kafka集群和Storm集群（OtherApp）四部分组成。 Zookeeper注册中心，提出负载均衡和地址查找服务 日志收集客户端，用于采集应用系统的日志，并将数据推送到kafka队列 Kafka集群：接收，路由，存储，转发等消息处理 Storm集群：与OtherApp处于同一级别，采用拉的方式消费队列中的数据
 
 ### 2.3 RabbitMQ简介
 
-RabbitMQ是一个由erlang开发的AMQP（Advanved Message Queue Protocol）的开源实现。
-**核心概念**
-Message消息，消息是不县名的，它由消息头和消息体组成。消息体是不透明的，而消息头则由一系列的可选属性组成，这些属性包括routing-key（路由键）、priority（相对于其他消息的优先权）、delivery-mode（指出该消息可能需要持久性存储）等。
-**Publisher**
+RabbitMQ是一个由erlang开发的AMQP（Advanved Message Queue Protocol）的开源实现。 **核心概念** Message消息，消息是不县名的，它由消息头和消息体组成。消息体是不透明的，而消息头则由一系列的可选属性组成，这些属性包括routing-key（路由键）、priority（相对于其他消息的优先权）、delivery-mode（指出该消息可能需要持久性存储）等。 **Publisher**
 
 消息的生产者，也是一个向交换器发布消息的客户端应用程序。**Exchange**
 
-交换器，用来接收生产者发送的消息并将这些消息路由给服务器中的队列。
-Exchange有4种类型：direct（默认），fanout，topic，和headers，不同类型的Exchange转发消息的策略有所区别
+交换器，用来接收生产者发送的消息并将这些消息路由给服务器中的队列。 Exchange有4种类型：direct（默认），fanout，topic，和headers，不同类型的Exchange转发消息的策略有所区别
 
 **Queue**
 
@@ -5757,8 +5709,7 @@ Exchange有4种类型：direct（默认），fanout，topic，和headers，不�
 
 **Binding**
 
-绑定，用于消息队列和交换器之间的关联。一个绑定就是基于路由键将交换器和消息队列连接起来的路由规则，所以可以将交换器理解成一个由绑定构成的路由表。
-Exchange和Queue的绑定可以是多对多的关系。
+绑定，用于消息队列和交换器之间的关联。一个绑定就是基于路由键将交换器和消息队列连接起来的路由规则，所以可以将交换器理解成一个由绑定构成的路由表。 Exchange和Queue的绑定可以是多对多的关系。
 
 **Connection**
 
@@ -5784,7 +5735,7 @@ Exchange和Queue的绑定可以是多对多的关系。
 
 安装RabbitMQ
 
-```shell
+```powershell
 sudo docker pull rabbitmq:3.7-management
 
 sudo docker run -d -p 5672:5672 -p 15672:15672 --name myrabbitmq rabbitmq:3.7-management
@@ -5792,13 +5743,13 @@ sudo docker run -d -p 5672:5672 -p 15672:15672 --name myrabbitmq rabbitmq:3.7-ma
 
 15672是后台管理的端口号，装好以后可以使用访问
 
-```
+```powershell
 ip:15672
 ```
 
 然后使用默认的账号密码登陆
 
-```
+```powershell
 账号：guest
 密码：guest
 ```
@@ -5807,7 +5758,7 @@ ip:15672
 
 **基本操作命令：**
 
-```shell
+```powershell
 # root权限
 #添加用户，后面两个参数分别是用户名和密码
 rabbitmqctl add_user username passwd  
@@ -5830,7 +5781,7 @@ rabbitmqctl delete_vhost vhost_name
 
 **操作步骤：**
 
-```shell
+```powershell
 # 1.查看rabbitmq容器id
 sudo docker ps
 
@@ -5855,7 +5806,7 @@ exit
 
 
 
-![使用RabbitMQ模型图](assets/%E4%BD%BF%E7%94%A8RabbitMQ%E6%A8%A1%E5%9E%8B%E5%9B%BE.png)
+![使用RabbitMQ模型图](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/213849013813.png?lastModify=1573739193)
 
 ## 3 SpringBoot与检索
 
@@ -5865,7 +5816,7 @@ exit
 
 ### 3.2 安装
 
-```shell
+```powershell
 #下载镜像
 sudo docker pull elasticsearch
 
@@ -5875,21 +5826,19 @@ sudo docker run -e ES_JAVA_OPTS="-Xms256m -Xmx256m" -d -p 9200:9200 -p 9300:9300
 
 然后访问9200端口出现下面的结果则说明安装成功了：
 
-![初次访问elasticsearch](assets/%E5%88%9D%E6%AC%A1%E8%AE%BF%E9%97%AEelasticsearch.png)
+![初次访问elasticsearch](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/138139031313.png?lastModify=1573739193)
 
 **ES参考文档**
 
-```
+```powershell
 https://www.elastic.co/guide/cn/elasticsearch/guide/current/index.html
-
 ```
 
 还可以使用`Postman`来测试`ES`的`api`,比如添加一个员工
 
 ```json
-#使用PUT方式请求
+// 使用PUT方式请求
 ip:9200/megacorp/employee/1
-
 ```
 
 注意，路径 `/megacorp/employee/1` 包含了三部分的信息：
@@ -5906,21 +5855,19 @@ ip:9200/megacorp/employee/1
 
 还可以使用`delete`、`Get`等操作
 
-![postmant向es存储数据](assets/postmant%E5%90%91es%E5%AD%98%E5%82%A8%E6%95%B0%E6%8D%AE.png)
+![postmant向es存储数据](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/18510851313.png?lastModify=1573739193)
 
 还可以使用轻量搜索查询全部数据
 
-```
-#Get请求
+```json
+//Get请求
 ip:9200/megacorp/employee/_search
-
 ```
 
 或者按条件查询
 
-```
+```json
 GET /megacorp/employee/_search?q=last_name:Smith
-
 ```
 
 **更多操作参考文档**
@@ -5934,11 +5881,10 @@ GET /megacorp/employee/_search?q=last_name:Smith
 1. `Jest`(默认不生效需要导入jest的工具包`io.searchbox.client.JestClient`)
 2. `SpringData ElasticSearch`
 
-```
+```markdown
 1）Client 节点信息clusterNodes；clusterName
 2）ELasticsearchTemplate 操作es
 3）编写一个ELasticsearchRepository的子接口来操作ES；
-
 ```
 
 #### 3.4.1 使用Jest操作ES
@@ -5951,7 +5897,6 @@ GET /megacorp/employee/_search?q=last_name:Smith
     <artifactId>jest</artifactId>
     <version>5.3.4</version>
 </dependency>
-
 ```
 
 配置Jest
@@ -5961,7 +5906,6 @@ spring:
   elasticsearch:
     jest:
       uris: http://119.24.69.200:9200
-
 ```
 
 测试；
@@ -6030,7 +5974,7 @@ public class Springboot03ElasticsearchApplicationTests {
 
 版本适配参考网址：
 
-```
+```markdown
 https://github.com/spring-projects/spring-data-elasticsearch/
 ```
 
@@ -6058,11 +6002,8 @@ spring:
       cluster-nodes: ip:9300
 ```
 
-2. `ElastcisearchTemplate`操作ES
-
-3. 编写一个`ElasticsearchRepository`的子接口来操作ES
-
-==TODO:NoNodeAvailableException[None of the configured nodes are available: [{#transport#-1}{Rbd3gnKtQO-sSWDsnW46LQ}{119.23.69.244}{119.23.69.244:9300}]错误未解决==
+1. `ElastcisearchTemplate`操作ES
+2. 编写一个`ElasticsearchRepository`的子接口来操作ES
 
 ## 4 Spring Boot 与任务
 
@@ -6084,7 +6025,7 @@ public class Springboot04TaskApplication {
 }
 ```
 
-2. 在方法上使用`@Async`注解
+1. 在方法上使用`@Async`注解
 
 ```java
 @Service
@@ -6096,7 +6037,6 @@ public class AsyncService {
         System.out.println("数据处理中");
     }
 }
-
 ```
 
 测试
@@ -6138,7 +6078,7 @@ public class Springboot04TaskApplication {
 }
 ```
 
-2. 在定时任务方法上使用`@Scheduled`注解,服务器启动时，定时任务会按照规则自动执行
+1. 在定时任务方法上使用`@Scheduled`注解,服务器启动时，定时任务会按照规则自动执行
 
 ```java
 @Service
@@ -6159,9 +6099,8 @@ public class ScheduledService {
 
 `cron`表达式生成网址参考：
 
-```
+```markdown
 http://cron.qqe2.com/
-
 ```
 
 各字段含义：
@@ -6196,7 +6135,7 @@ http://cron.qqe2.com/
 
 **常用表达式例子**
 
-　　（1）`0 0 2 1 \* ? \* `  表示在每月的1日的凌晨2点调整任务
+　　（1）`0 0 2 1 \* ? \*`  表示在每月的1日的凌晨2点调整任务
 
 　　（2）`0 15 10 ? \* MON-FRI`   表示周一到周五每天上午10:15执行作业
 
@@ -6218,7 +6157,7 @@ http://cron.qqe2.com/
 
 　　（11）`0 15 10 * * ? 2005`    2005年的每天上午10:15触发 
 
-　　（12）`0 * 14 * * ? `    在每天下午2点到下午2:59期间的每1分钟触发 
+　　（12）`0 * 14 * * ?`    在每天下午2点到下午2:59期间的每1分钟触发 
 
 　　（13）`0 0/5 14 * * ?`    在每天下午2点到下午2:55期间的每5分钟触发 
 
@@ -6257,7 +6196,7 @@ http://cron.qqe2.com/
 
 自动装配`JavaMailSender`
 
-2. 在主配置文件中配置：
+1. 在主配置文件中配置：
 
 ```yaml
 spring:
@@ -6265,10 +6204,9 @@ spring:
     username: 148..63614@qq.com
     password: vdu...ccf
     host: smtp.qq.com
-
 ```
 
-3. 使用示例：
+1. 使用示例：
 
 ```java
 @RunWith(SpringRunner.class)
@@ -6310,7 +6248,7 @@ public class Springboot04TaskApplicationTests {
 
 参考文档：
 
-```
+```markdown
 https://docs.spring.io/spring-security/site/docs/current/guides/html5/helloworld-boot.html
 ```
 
@@ -6325,7 +6263,7 @@ https://docs.spring.io/spring-security/site/docs/current/guides/html5/helloworld
 </dependency>
 ```
 
-3. 编写`SpringSecurity`的配置类继承于`WebSecurityConfigurerAdapter `并添加`@EnableWebSecurity`注解
+1. 编写`SpringSecurity`的配置类继承于`WebSecurityConfigurerAdapter`并添加`@EnableWebSecurity`注解
 
 ```java
 @EnableWebSecurity
@@ -6334,7 +6272,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 }
 ```
 
-4. 控制请求的访问权限，重写`configure(HttpSecurity http)`方法或者`configureGlobal(AuthenticationManagerBuilder auth)`方法
+1. 控制请求的访问权限，重写`configure(HttpSecurity http)`方法或者`configureGlobal(AuthenticationManagerBuilder auth)`方法
 
 ```java
 @EnableWebSecurity
@@ -6417,7 +6355,6 @@ public class HeroController {
         return "pages/login";
     }
 }
-
 ```
 
 登陆html
@@ -6429,7 +6366,6 @@ public class HeroController {
     <input type="checkbox" name="rememberMe">记住我<br>
     <input type="submit" value="登陆">
 </form>
-
 ```
 
 开启自动自动配置的注销功能
@@ -6437,7 +6373,6 @@ public class HeroController {
 ```java
 //开启自动配置的注销功能，会清空session，注销成功会返回/login?logout页面
  http.logout();
-
 ```
 
 开启记住我功能
@@ -6448,7 +6383,6 @@ public class HeroController {
 // 如果点击注销会清除cookie
 // 可以定制规则
 http.rememberMe().rememberMeParameter("rememberMe");
-
 ```
 
 完整代码：
@@ -6500,26 +6434,23 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("wangwu").password("12345").roles("VIP1","VIP3");
     }
 }
-
 ```
 
 在页面中使用`spring-security`与`thymeleaf`整合的标签属性可以获取`session`中的用户及一些角色属性还有是否认证,引入`spring-seurity`的`thymeleaf`扩展
 
 ```xml
-!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity4 -->
+<!-- https://mvnrepository.com/artifact/org.thymeleaf.extras/thymeleaf-extras-springsecurity4 -->
 <dependency>
     <groupId>org.thymeleaf.extras</groupId>
     <artifactId>thymeleaf-extras-springsecurity5</artifactId>
     <version>3.0.4.RELEASE</version>
 </dependency>
-
 ```
 
 扩展的引入需要根据当前引入的`spring-security`的版本来定，我引入的`spring-security`是5版本所以扩展也引入五版本，否则会标签属性取不到值，具体看官方说明：
 
-```html
+```markdown
 https://github.com/thymeleaf/thymeleaf-extras-springsecurity
-
 ```
 
 然后就可以使用了
@@ -6549,7 +6480,6 @@ https://github.com/thymeleaf/thymeleaf-extras-springsecurity
         </ul>
     </body>
 </html>
-
 ```
 
 `sec:authorize="isAuthenticated()"`用于判断是否已经认证（登陆），认证了才显示，`sec:authentication="name"`表示取出当前认证的session中的用户名，`sec:authentication="principal.authorities"`取出当前认证的用户的角色信息
@@ -6565,7 +6495,6 @@ https://github.com/thymeleaf/thymeleaf-extras-springsecurity
         <li><a th:href="@{/pages/group1/3}">吴用</a></li>
     </ul>
 </div>
-
 ```
 
 该段代码表示，如果当前认证的角色是`VIP1`就显示否则不显示。
@@ -6589,10 +6518,9 @@ https://github.com/thymeleaf/thymeleaf-extras-springsecurity
 
 ```
 https://github.com/apache/incubator-dubbo
-
 ```
 
-![DubboArchitecture](assets/DubboArchitecture.png)
+![DubboArchitecture](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/DubboArchitecture.png?lastModify=1573739193)
 
 1. 引入dubbo和zkclient相关依赖
 
@@ -6611,7 +6539,7 @@ https://github.com/apache/incubator-dubbo
 </dependency>
 ```
 
-2. 配置dubbo的扫描包和注册中心地址
+1. 配置dubbo的扫描包和注册中心地址
 
 ```properties
 dubbo.application.name=provider-ticket
@@ -6621,7 +6549,7 @@ dubbo.registry.address=zookeeper://119.19.70.224:2181
 dubbo.scan.base-packages=xyz.guqing.ticket.service
 ```
 
-3. 使用@Service发布服务
+1. 使用@Service发布服务
 
 ```java
 import com.alibaba.dubbo.config.annotation.Service;
@@ -6641,14 +6569,13 @@ public class TicketServiceImpl implements TicketService {
 
 1. 安装`zookeeper`
 
-```shell
+```powershell
 sudo docker pull zookeeper
 #启动镜像
 sudo docker run --name myzookeeper -p 2181:2181 --restart always -d zookeeper
-
 ```
 
-2. 创建项目测试：
+1. 创建项目测试：
 
 如上的步骤，创建两个工程`provider-ticket`和`consumer-user`在两个工程中都分别引入第一步的两个依赖
 
@@ -6664,7 +6591,7 @@ dubbo.scan.base-packages=xyz.guqing.ticket.service
 
 然后创建一个`TicketService`接口和一个实现类
 
-![ticketservice](assets/ticketservice.png)
+![ticketservice](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/ticketservice.png?lastModify=1573739193)
 
 ```java
 public interface TicketService {
@@ -6696,7 +6623,7 @@ dubbo.registry.address=zookeeper://119.19.70.224:2181
 
 创建一个`UserService`
 
-![consumer-user的userService](assets/consumer-user%E7%9A%84userService.png)
+![consumer-user的userService](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/258103813131.png?lastModify=1573739193)
 
 然后如上图在创建一个包名和第一个项目一样的`TocketService`内容也需要完全一样
 
@@ -6736,7 +6663,7 @@ public class ConsumerUserApplicationTests {
 
 运行结果：
 
-```
+```markdown
 购票成功：《蓝皮书》
 ```
 
@@ -6756,7 +6683,7 @@ Spring Cloud是一个分布式的整体解决方案。Spring Cloud 为开发者�
 - 服务网关——Netflix Zuul
 - 分布式配置——Spring Cloud Config
 
-![springcloud框架图](assets/springcloud%E6%A1%86%E6%9E%B6%E5%9B%BE.png)
+![springcloud框架图](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/15810851331.png?lastModify=1573739193)
 
 ## 8 SpringBoot与开发热部署
 
@@ -6767,18 +6694,18 @@ Spring Cloud是一个分布式的整体解决方案。Spring Cloud 为开发者�
 - 在`Spring Boot`中开发情况下禁用模板引擎的cache
 - 页面模板改变`ctrl+F9`可以重新编译当前页面并生效
 
-2. `Spring Loaded Spring`官方提供的热部署程序，实现修改类文件的热部署
+1. `Spring Loaded Spring`官方提供的热部署程序，实现修改类文件的热部署
 
-- 下载`Spring Loaded`（项目地址https://github.com/spring-projects/spring-loaded）
+- 下载`Spring Loaded`（项目地址`https://github.com/spring-projects/spring-loaded`）
 - 添加运行时参数；
   - `javaagent:C:；/springloaded-1.2.5.RELEASE jar-noverify`
 
-3. `JRebel`
+1. `JRebel`
 
 - 收费的一个热部署软件
 - 安装插件使用即可
 
-4. Spring Boot Devtools（推荐）
+1. Spring Boot Devtools（推荐）
 
 - 引入依赖
 
@@ -6793,14 +6720,13 @@ Spring Cloud是一个分布式的整体解决方案。Spring Cloud 为开发者�
 
 `IntelljIEDA`和`Eclipse`不同，`Ecljpse`设置了自动编译之后，修改类它会自动编译，而`IDEA`在非`RUN`或`DEBUG`情况下才会自动编译（前提是你已经设置了`Auto-Compile`）。
 
-- 设置自动编译（settings-compiler-make project automatically）
-- ctrl+shift+alt+/（maintenance）
-- 勾选compiler.automake.allow.when.app.running
+- 设置自动编译（`settings-compiler-make project automatically`）
+- `ctrl+shift+alt+/`（maintenance）
+- 勾选`compiler.automake.allow.when.app.running`
 
 ## 9 Spring Boot与监控管理
 
-通过引入`spring-boot-starter-actuator`，可以使用`Spring Boot`为我们提供的准生产环境下的应用监控和管理功能。我们可以通过`HTTP`，`JMX`，`SSH`协议来进行操作，自动得到审计、健康及指标信息等
-**步骤：**
+通过引入`spring-boot-starter-actuator`，可以使用`Spring Boot`为我们提供的准生产环境下的应用监控和管理功能。我们可以通过`HTTP`，`JMX`，`SSH`协议来进行操作，自动得到审计、健康及指标信息等 **步骤：**
 
 - 引入`spring-boot-starter-actuator`
 - 通过http方式访问监控端点
@@ -6822,4 +6748,3 @@ Spring Cloud是一个分布式的整体解决方案。Spring Cloud 为开发者�
 | mappings    | 应用@RequestMapping映射路径 |
 | shutdown    | 关闭当前应用（默认关闭）    |
 | trace       | 追踪信息（最新的http请求）  |
-

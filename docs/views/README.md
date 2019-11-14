@@ -23,6 +23,11 @@ export default {
           content: 'Redis 学习笔记'
         },
         {
+          url: '/views/springboot/springboot.html',
+          title: 'SpringBoot',
+          content: 'SpringBoot 学习笔记'
+        },
+        {
           url: '/views/docker/docker.html',
           title: 'Docker',
           content: 'Docker 学习笔记'
