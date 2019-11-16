@@ -13,6 +13,11 @@ export default {
           content: 'Java web 基础学习笔记'
         },
         {
+          url: '/views/spring/spring.html',
+          title: 'Spring',
+          content: 'Spring 学习笔记'
+        },
+        {
           url: '/views/linux/linux.html',
           title: 'Linux',
           content: 'linux 学习笔记'
