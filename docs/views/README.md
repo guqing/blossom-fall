@@ -18,6 +18,11 @@ export default {
           content: 'Spring 学习笔记'
         },
         {
+          url: '/views/mybatis/mybatis.html',
+          title: 'Mybatis',
+          content: 'Mybatis 学习笔记'
+        },
+        {
           url: '/views/linux/linux.html',
           title: 'Linux',
           content: 'linux 学习笔记'
