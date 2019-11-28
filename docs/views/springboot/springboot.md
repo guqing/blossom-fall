@@ -5037,16 +5037,14 @@ public @interface Cacheable {
   ```java
   @Cacheable(cacheNames = "employeeService",key="#root.mehotdName-#id")//key：方法名-参数
   public Employee get(Integer id){}
-```
-  
-  更多的取值参考下图:
+  ```
+更多的取值参考下图:
 
-![@Cacheable的key属性使用说明](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/513901313131.png?lastModify=1573739193)
+![@Cacheable的key属性使用说明](./images/springboot/513901313131.png)
 
 - `keyGenerator`: `key`的生成器，可以自己指定`key`的生成器的组件`id`,`key`与`keyGenerator`二选一
 
 自己指定`keyGenerator`
-
 ```java
 @Configuration
 public class MyCacheConfig {
@@ -5625,29 +5623,29 @@ public class MyRedisConfig {
 
 场景说明：用户注册后，需要发注册邮件和注册短信。传统的做法有两种 1.串行的方式；2.并行方式 a、串行方式：将注册信息写入数据库成功后，发送注册邮件，再发送注册短信。以上三个任务全部完成后，返回给客户端。
 
-![消息队列应用场景异步处理1](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/155810831013.png?lastModify=1573739193)
+![消息队列应用场景异步处理1](./images/springboot/155810831013.png)
 
 b、并行方式：将注册信息写入数据库成功后，发送注册邮件的同时，发送注册短信。以上三个任务完成后，返回给客户端。与串行的差别是，并行的方式可以提高处理的时间
 
-![消息队列应用场景异步处理1](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/513809831131.png?lastModify=1573739193)
+![消息队列应用场景异步处理1](./images/springboot/513809831131.png)
 
 设三个业务节点每个使用50毫秒钟，不考虑网络等其他开销，则串行方式的时间是150毫秒，并行的时间可能是100毫秒。 因为CPU在单位时间内处理的请求数是一定的，假设CPU1秒内吞吐量是100次。则串行方式1秒内CPU可处理的请求量是7次（1000/150）。并行方式处理的请求量是10次（1000/100） 小结：如以上案例描述，传统的方式系统的性能（并发量，吞吐量，响应时间）会有瓶颈。如何解决这个问题呢？
 
 引入消息队列，将不是必须的业务逻辑，异步处理。改造后的架构如下：
 
-![消息队列应用场景异步处理1](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/51380131313.png?lastModify=1573739193)
+![消息队列应用场景异步处理1](./images/springboot/51380131313.png?lastModify=1573739193)
 
 #### 2.2.2 应用解耦
 
 场景说明：用户下单后，订单系统需要通知库存系统。传统的做法是，订单系统调用库存系统的接口。如下图：
 
-![消息队列应用场景应用解耦1.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/5187913113131.png?lastModify=1573739193)
+![消息队列应用场景应用解耦1.png](./images/springboot/5187913113131.png?lastModify=1573739193)
 
 传统模式的缺点：假如库存系统无法访问，则订单减库存将失败，从而导致订单失败，订单系统与库存系统耦合
 
 如何解决以上问题呢？引入应用消息队列后的方案，如下图：
 
-![消息队列应用场景应用解耦2.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/138510831313.png?lastModify=1573739193)
+![消息队列应用场景应用解耦2.png](./images/springboot/138510831313.png?lastModify=1573739193)
 
 订单系统：用户下单后，订单系统完成持久化处理，将消息写入消息队列，返回用户订单下单成功 库存系统：订阅下单的消息，采用拉/推的方式，获取下单信息，库存系统根据下单信息，进行库存操作 假如：在下单时库存系统不能正常使用。也不影响正常下单，因为下单后，订单系统写入消息队列就不再关心其他的后续操作了。实现订单系统与库存系统的应用解耦
 
@@ -5655,7 +5653,7 @@ b、并行方式：将注册信息写入数据库成功后，发送注册邮件�
 
  流量削锋也是消息队列中的常用场景，一般在秒杀或团抢活动中使用广泛。 应用场景：秒杀活动，一般会因为流量过大，导致流量暴增，应用挂掉。为解决这个问题，一般需要在应用前端加入消息队列。 a、可以控制活动的人数 b、可以缓解短时间内高流量压垮应用
 
-![消息队列应用场景流量肖峰1.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/13831081313.png?lastModify=1573739193)
+![消息队列应用场景流量肖峰1.png](./images/springboot/13831081313.png?lastModify=1573739193)
 
 用户的请求，服务器接收后，首先写入消息队列。假如消息队列长度超过最大数量，则直接抛弃用户请求或跳转到错误页面。 秒杀业务根据消息队列中的请求信息，再做后续处理
 
@@ -5663,7 +5661,7 @@ b、并行方式：将注册信息写入数据库成功后，发送注册邮件�
 
 日志处理是指将消息队列用在日志处理中，比如Kafka的应用，解决大量日志传输的问题。架构简化如下
 
-![消息队列应用场景日志处理1.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/138419081313.png?lastModify=1573739193)
+![消息队列应用场景日志处理1.png](./images/springboot/138419081313.png?lastModify=1573739193)
 
 日志采集客户端，负责日志数据采集，定时写受写入Kafka队列 Kafka消息队列，负责日志数据的接收，存储和转发 日志处理应用：订阅并消费kafka队列中的日志数据 
 
@@ -5671,13 +5669,13 @@ b、并行方式：将注册信息写入数据库成功后，发送注册邮件�
 
 消息通讯是指，消息队列一般都内置了高效的通信机制，因此也可以用在纯的消息通讯。比如实现点对点消息队列，或者聊天室等 点对点通讯：
 
-![消息队列应用场景消息通讯1.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/23874108131.png?lastModify=1573739193)
+![消息队列应用场景消息通讯1.png](./images/springboot/23874108131.png?lastModify=1573739193)
 
 客户端A和客户端B使用同一队列，进行消息通讯。
 
 聊天室通讯
 
-![消息队列应用场景消息通讯2.png](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/2418901381133.png?lastModify=1573739193)
+![消息队列应用场景消息通讯2.png](./images/springboot/2418901381133.png?lastModify=1573739193)
 
 客户端A，客户端B，客户端N订阅同一主题，进行消息发布和接收。实现类似聊天室效果。
 
@@ -5685,13 +5683,13 @@ b、并行方式：将注册信息写入数据库成功后，发送注册邮件�
 
 #### 2.2.6 电商系统
 
-![消息队列应用场景电商系统1](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/21383801380313.jpg?lastModify=1573739193)
+![消息队列应用场景电商系统1](./images/springboot/21383801380313.jpg?lastModify=1573739193)
 
 消息队列采用高可用，可持久化的消息中间件。比如Active MQ，Rabbit MQ，Rocket Mq。 （1）应用将主干逻辑处理完成后，写入消息队列。消息发送是否成功可以开启消息的确认模式。（消息队列返回消息接收成功状态后，应用再返回，这样保障消息的完整性） （2）扩展流程（发短信，配送处理）订阅队列消息。采用推或拉的方式获取消息并处理。 （3）消息将应用解耦的同时，带来了数据一致性问题，可以采用最终一致性方式解决。比如主数据写入数据库，扩展应用根据消息队列，并结合数据库方式实现基于消息队列的后续处理。
 
 #### 2.2.7 日志收集系统
 
-![消息队列应用场景日志收集系统1.jpg](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/4138713131.jpg?lastModify=1573739193)
+![消息队列应用场景日志收集系统1.jpg](./images/springboot/4138713131.jpg?lastModify=1573739193)
 
 分为Zookeeper注册中心，日志收集客户端，Kafka集群和Storm集群（OtherApp）四部分组成。 Zookeeper注册中心，提出负载均衡和地址查找服务 日志收集客户端，用于采集应用系统的日志，并将数据推送到kafka队列 Kafka集群：接收，路由，存储，转发等消息处理 Storm集群：与OtherApp处于同一级别，采用拉的方式消费队列中的数据
 
@@ -5806,7 +5804,7 @@ exit
 
 
 
-![使用RabbitMQ模型图](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/213849013813.png?lastModify=1573739193)
+![使用RabbitMQ模型图](./images/springboot/213849013813.png?lastModify=1573739193)
 
 ## 3 SpringBoot与检索
 
@@ -5826,7 +5824,7 @@ sudo docker run -e ES_JAVA_OPTS="-Xms256m -Xmx256m" -d -p 9200:9200 -p 9300:9300
 
 然后访问9200端口出现下面的结果则说明安装成功了：
 
-![初次访问elasticsearch](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/138139031313.png?lastModify=1573739193)
+![初次访问elasticsearch](./images/springboot/138139031313.png?lastModify=1573739193)
 
 **ES参考文档**
 
@@ -5855,7 +5853,7 @@ ip:9200/megacorp/employee/1
 
 还可以使用`delete`、`Get`等操作
 
-![postmant向es存储数据](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/18510851313.png?lastModify=1573739193)
+![postmant向es存储数据](./images/springboot/18510851313.png?lastModify=1573739193)
 
 还可以使用轻量搜索查询全部数据
 
@@ -6520,7 +6518,7 @@ https://github.com/thymeleaf/thymeleaf-extras-springsecurity
 https://github.com/apache/incubator-dubbo
 ```
 
-![DubboArchitecture](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/DubboArchitecture.png?lastModify=1573739193)
+![DubboArchitecture](./images/springboot/DubboArchitecture.png?lastModify=1573739193)
 
 1. 引入dubbo和zkclient相关依赖
 
@@ -6591,7 +6589,7 @@ dubbo.scan.base-packages=xyz.guqing.ticket.service
 
 然后创建一个`TicketService`接口和一个实现类
 
-![ticketservice](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/ticketservice.png?lastModify=1573739193)
+![ticketservice](./images/springboot/ticketservice.png?lastModify=1573739193)
 
 ```java
 public interface TicketService {
@@ -6623,7 +6621,7 @@ dubbo.registry.address=zookeeper://119.19.70.224:2181
 
 创建一个`UserService`
 
-![consumer-user的userService](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/258103813131.png?lastModify=1573739193)
+![consumer-user的userService](./images/springboot/258103813131.png?lastModify=1573739193)
 
 然后如上图在创建一个包名和第一个项目一样的`TocketService`内容也需要完全一样
 
@@ -6683,7 +6681,7 @@ Spring Cloud是一个分布式的整体解决方案。Spring Cloud 为开发者�
 - 服务网关——Netflix Zuul
 - 分布式配置——Spring Cloud Config
 
-![springcloud框架图](file:///home/guqing/%E6%96%87%E6%A1%A3/blossom-fall/docs/views/springboot/images/springboot/15810851331.png?lastModify=1573739193)
+![springcloud框架图](./images/springboot/15810851331.png?lastModify=1573739193)
 
 ## 8 SpringBoot与开发热部署
 
