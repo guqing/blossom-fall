@@ -23,6 +23,11 @@ export default {
           content: 'Mybatis 学习笔记'
         },
         {
+          url: '/views/springmvc/springmvc.html',
+          title: 'Springmvc',
+          content: 'Springmvc 学习笔记'
+        },
+        {
           url: '/views/linux/linux.html',
           title: 'Linux',
           content: 'linux 学习笔记'
