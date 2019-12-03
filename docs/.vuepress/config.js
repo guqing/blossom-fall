@@ -1,25 +1,61 @@
 module.exports = {
-  title: "Blossomfall",
+  title: 'Blossomfall',
   description: 'Complete learning notes,readings at any time, knowledge review',
   dest: 'public',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }],
-    ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
+    [
+      'meta',
+      {
+        name: 'viewport',
+        content: 'width=device-width,initial-scale=1,user-scalable=no'
+      }
+    ],
+    ['script', { src: 'https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js' }]
+  ],
+  plugins: [
+    [
+      'demo-block',
+      {
+        cssLibs: ['https://unpkg.com/animate.css@3.7.0/animate.min.css']
+      }
+    ]
   ],
   theme: 'reco',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/', icon: 'reco-home' },
-      { text: 'Contact', 
+      {
+        text: 'Contact',
         icon: 'reco-message',
         items: [
-          { text: 'GitHub', link: 'https://github.com/guqing', icon: 'reco-github' },
-          { text: '微博', link: 'https://weibo.com/guqing3478520', icon: 'reco-weibo' },
-          { text: '掘金', link: 'https://juejin.im/user/5da81147e51d45249d47f816', icon: 'reco-juejin' },
-          { text: '个人博客', link: 'https://www.guqing.xyz', icon: 'reco-blog' },
+          {
+            text: 'GitHub',
+            link: 'https://github.com/guqing',
+            icon: 'reco-github'
+          },
+          {
+            text: '微博',
+            link: 'https://weibo.com/guqing3478520',
+            icon: 'reco-weibo'
+          },
+          {
+            text: '掘金',
+            link: 'https://juejin.im/user/5da81147e51d45249d47f816',
+            icon: 'reco-juejin'
+          },
+          {
+            text: '个人博客',
+            link: 'https://www.guqing.xyz',
+            icon: 'reco-blog'
+          }
         ]
       },
-      { text: 'GitHub', link: 'https://github.com/guqing/blossom-fall', icon: 'reco-github' },
+      {
+        text: 'GitHub',
+        link: 'https://github.com/guqing/blossom-fall',
+        icon: 'reco-github'
+      }
     ],
     logo: '/head.png',
     // 搜索设置
@@ -55,4 +91,4 @@ module.exports = {
   markdown: {
     lineNumbers: true
   }
-}  
+}

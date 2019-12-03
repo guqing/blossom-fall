@@ -53,6 +53,11 @@ export default {
           url: '/views/docker/docker.html',
           title: 'Docker',
           content: 'Docker 学习笔记'
+        },
+        {
+          url: '/views/test/test.html',
+          title: 'Test',
+          content: 'Test 学习笔记'
       }]
     }
   }

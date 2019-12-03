@@ -9,6 +9,7 @@
   "devDependencies": {
     "prismjs": "^1.17.1",
     "vuepress": "1.2.0",
+    "vuepress-plugin-demo-block": "^0.7.2",
     "vuepress-theme-reco": "1.1.1"
   },
   "description": "a Java notes guide"
