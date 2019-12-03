@@ -1,7 +1,9 @@
 ---
 sidebar: none
 ---
+
 <Card :dataSource="dataSource"></Card>
+
 <script>
 export default {
   data() {
@@ -41,6 +43,11 @@ export default {
           url: '/views/springboot/springboot.html',
           title: 'SpringBoot',
           content: 'SpringBoot 学习笔记'
+        },
+        {
+          url: '/views/vue/vue.html',
+          title: 'Vuejs',
+          content: 'Vuejs 学习笔记'
         },
         {
           url: '/views/docker/docker.html',
