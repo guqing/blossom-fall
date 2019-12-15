@@ -34,7 +34,6 @@
 以上就成功创建了第一个Vue应用！Vue将数据和DOM之间建立了关联，所有东西都是**响应式的**。打开控制台修改msg的值，你将看到上例相应地更新。
 
 除了文本插值，我们还可以像这样来绑定元素特性：
-
 ```html
 <div id="app-2">
 	<span v-bind:title="message">
@@ -50,7 +49,6 @@
 	})
 </script>
 ```
-
 v-bind特性被称为**指令**。指令带有前缀 `v-`以表示它们是 Vue 提供的特殊特性。该指令的意思是：“将这个元素节点的 `title` 特性和 Vue 实例的 `message`属性保持一致”。
 
 **v-text与v-cloak:**
@@ -212,15 +210,15 @@ var app4 = new Vue({
 </div>
 <script type="text/javascript">
     var app4 = new Vue({
-        el: '#app-4',
-        data: {
-            user:{
-                id:'1',
-                name:'zhangsan',
-                sex:'男',
-                age:'18'
-            }
+      el: '#app-4',
+      data: {
+        user:{
+          id:'1',
+          name:'zhangsan',
+          sex:'男',
+          age:'18'
         }
+      }
     })
 </script>
 ```
@@ -245,9 +243,9 @@ age:18
 
 ```html
 <div id="app-4">
-    <p v-for="count in 10">
-        这是第 {{count}} 次循环
-    </p>
+  <p v-for="count in 10">
+    这是第 {{count}} 次循环
+  </p>
 </div>
 ```
 
@@ -259,15 +257,15 @@ count迭代从1开始
 
 ```html
 <div id="app-4">
-    <label>id:<input type="text" v-model="id"/></label>
-    <label>name:<input type="text"v-model="name"/></label>
-    <button type="button" @click="add">添加</button>
+  <label>id:<input type="text" v-model="id"/></label>
+  <label>name:<input type="text"v-model="name"/></label>
+  <button type="button" @click="add">添加</button>
 
-    <!-- 注意：v-for循环的时候，key属性只能使用number获取string-->
-    <!-- 注意：key在使用的时候，必须使用v-bind属性绑定的形式指定key的值 -->
-    <p v-for="item in list" :key="item.id">
-        <input type="checkbox"/>{{item.id}}-{{item.name}}
-    </p>
+  <!-- 注意：v-for循环的时候，key属性只能使用number获取string-->
+  <!-- 注意：key在使用的时候，必须使用v-bind属性绑定的形式指定key的值 -->
+  <p v-for="item in list" :key="item.id">
+      <input type="checkbox"/>{{item.id}}-{{item.name}}
+  </p>
 </div>
 		
 <script type="text/javascript">
@@ -296,9 +294,9 @@ count迭代从1开始
 
 ```html
 <div id="app-2">
-    <span v-bind:title="message">
-        鼠标悬停几秒钟查看此处动态绑定的提示信息！
-    </span>
+  <span v-bind:title="message">
+      鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
 </div>
 ```
 
@@ -315,9 +313,9 @@ var app2 = new Vue({
 
 ```javascript
 <div id="app-2">
-    <span v-bind:title="message + 'hellod world'">
-        鼠标悬停几秒钟查看此处动态绑定的提示信息！
-    </span>
+  <span v-bind:title="message + 'hellod world'">
+      鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
 </div>
 ```
 
@@ -370,27 +368,27 @@ var app5 = new Vue({
 
 ```html
 <div id="app">
-    <div class="innder" @click="divhandler">
-        <button type="button" @click="btnhandler">戳他</button>
-    </div>
+  <div class="innder" @click="divhandler">
+      <button type="button" @click="btnhandler">戳他</button>
+  </div>
 </div>
 ```
 
 ```javascript
 //创建vue实例得到ViewModel
 var vm = new Vue({
-    el:'#app',
-    data:{
+  el:'#app',
+  data:{
 
+  },
+  methods:{
+    divhandler:function(){
+        console.log('这是触发了inner div的点击事件')
     },
-    methods:{
-        divhandler:function(){
-            console.log('这是触发了inner div的点击事件')
-    	 },
-        btnhandler:function(){
-            console.log('这是触发了 btn 按钮的点击事件')
-        }
+    btnhandler:function(){
+        console.log('这是触发了 btn 按钮的点击事件')
     }
+  }
 })
 ```
 
@@ -405,9 +403,9 @@ var vm = new Vue({
 
 ```
 <div id="app">
-    <div class="innder" @click="divhandler">
-        <button type="button" @click.stop="btnhandler">戳他</button>
-    </div>
+  <div class="innder" @click="divhandler">
+      <button type="button" @click.stop="btnhandler">戳他</button>
+  </div>
 </div>
 ```
 
@@ -460,7 +458,7 @@ var vm = new Vue({
 
 ### 1.6简单案例：跑马灯效果
 
-```javascript
+```html
 <div id="app">
 	<input type="button" value="浪起来" @click="lang"/>
 	<input type="button" value="低调"@click="stop"/>
@@ -521,15 +519,14 @@ v-bind只能实现数据的单项绑定，从M自动绑定到V，无法实现数
   <p>{{ message }}</p>
   <input v-model="message">
 </div>
-```
-
-```javascript
+<script>
 var app6 = new Vue({
   el: '#app-6',
   data: {
     message: 'Hello Vue!'
   }
 })
+</script>
 ```
 
 注意v-model只能运用在表单元素中
@@ -589,18 +586,18 @@ textarea
 
 ```html
 <style type="text/css">
-    .red{
-        color: red;
-    }
-    .thin{
-        font-weight: 200;
-    }
-    .i{
-        font-style: italic;
-    }
-    .active{
-        letter-spacing: 0.5em;
-    }
+  .red{
+      color: red;
+  }
+  .thin{
+      font-weight: 200;
+  }
+  .i{
+      font-style: italic;
+  }
+  .active{
+      letter-spacing: 0.5em;
+  }
 </style>
 
 <div id="app">
@@ -702,67 +699,67 @@ https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanh
 
 ```css
 table {
-    border-collapse: collapse;
-    color: black;
+  border-collapse: collapse;
+  color: black;
 }
 th{
-    color: white;
-    background-color: #42B983;
+  color: white;
+  background-color: #42B983;
 }
 table,
 tr,
 td,
 th {
-    border: 1px solid #FF0000;
+  border: 1px solid #FF0000;
 }
 ```
 
 ```html
 <div id="app">
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>username</th>
-                <th>password</th>
-                <th>date</th>
-            </tr>
-        </thead>
-        <tr v-for="user in list">
-            <td>{{ user.id }}</td>
-            <td>{{ user.username }}</td>
-            <td>{{ user.password }}</td>
-            <td>{{ user.date | dateFormate}}</td>
-        </tr>
-    </table>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>username</th>
+        <th>password</th>
+        <th>date</th>
+      </tr>
+    </thead>
+    <tr v-for="user in list">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.password }}</td>
+      <td>{{ user.date | dateFormate}}</td>
+    </tr>
+  </table>
 </div>
 ```
 
 ```javascript
 var vm = new Vue({
-    el: '#app',
-    data: {
-        list: [{
-            id: 1,
-            username: 'guqing',
-            password: '12345',
-            date: new Date()
-        }]
-    },
-    //在某一个vue对象内部定义的过滤器称为私有过滤器
-    //这种过滤器旨在当前vue对象el指定的监管的区域内游泳
-    filters: {
-        //input是自定义过滤器的默认参数,input的值永远都是取决于 | 左边的内容
-        dateFormate: function(input) {
-            console.log(input)
-            //过滤器的逻辑,将input的值格式化成yyyy-MM-dd字符输出
-            var year = input.getFullYear();
-            var month = input.getMonth() + 1;
-            var day = input.getDay();
-            input = year + '-' + month + '-' + day
-            return input;
-        }
+  el: '#app',
+  data: {
+    list: [{
+      id: 1,
+      username: 'guqing',
+      password: '12345',
+      date: new Date()
+    }]
+  },
+  //在某一个vue对象内部定义的过滤器称为私有过滤器
+  //这种过滤器旨在当前vue对象el指定的监管的区域内游泳
+  filters: {
+      //input是自定义过滤器的默认参数,input的值永远都是取决于 | 左边的内容
+    dateFormate: function(input) {
+      console.log(input)
+      //过滤器的逻辑,将input的值格式化成yyyy-MM-dd字符输出
+      var year = input.getFullYear();
+      var month = input.getMonth() + 1;
+      var day = input.getDay();
+      input = year + '-' + month + '-' + day
+      return input;
     }
+  }
 })
 ```
 
@@ -777,24 +774,24 @@ js如下：
 ```javascript
 //定义一个名称为dateFormate的全局过滤器,两个参数,一个参数为过滤器名称,第二个参数为逻辑代码
 Vue.filter('dateFormate',function(input) {
-    //将input的值格式化成yyyy-MM-dd字符输出
-    var year = input.getFullYear();
-    var month = input.getMonth() + 1;
-    var day = input.getDay();
-    input = year + '-' + month + '-' + day
-    return input;
+  //将input的值格式化成yyyy-MM-dd字符输出
+  var year = input.getFullYear();
+  var month = input.getMonth() + 1;
+  var day = input.getDay();
+  input = year + '-' + month + '-' + day
+  return input;
 })
 
 var vm = new Vue({
-    el: '#app',
-    data: {
-        list: [{
-            id: 1,
-            username: 'guqing',
-            password: '12345',
-            date: new Date()
-        }]
-    }
+  el: '#app',
+  data: {
+    list: [{
+      id: 1,
+      username: 'guqing',
+      password: '12345',
+      date: new Date()
+    }]
+  }
 })
 ```
 
@@ -824,101 +821,101 @@ var vm = new Vue({
 
 ```css
 #app-4{
-    width: 600px;
-    margin: 0 auto;
+  width: 600px;
+  margin: 0 auto;
 }
 table {
-    width:100%;
-    border-collapse: collapse;
-    color: black;
-    margin-top: 15px;
+  width:100%;
+  border-collapse: collapse;
+  color: black;
+  margin-top: 15px;
 }
 
 th {
-    color: white;
-    background-color: dodgerblue;
+  color: white;
+  background-color: dodgerblue;
 }
 
 table,
 tr,
 td,
 th {
-    text-align: center;
-    border: 1px solid #FF0000;
+  text-align: center;
+  border: 1px solid #FF0000;
 }
 ```
 
 ```html
 <div id="app-4">
-    <label>id:<input type="text" v-model="id" /></label>
-    <!-- #### 重点看这里：-->
-    <!-- 注册keydown事件，不加修饰符时只要按键改变就会触发，所以要加按键修饰符 -->
-    <label>姓名:<input type="text" v-model="name" @keydown.enter="add"/></label>
-    <button type="button" @click="add">添加</button>
+  <label>id:<input type="text" v-model="id" /></label>
+  <!-- #### 重点看这里：-->
+  <!-- 注册keydown事件，不加修饰符时只要按键改变就会触发，所以要加按键修饰符 -->
+  <label>姓名:<input type="text" v-model="name" @keydown.enter="add"/></label>
+  <button type="button" @click="add">添加</button>
 
-    <table>
-        <thead>
-            <tr>
-                <th>选择</th>
-                <th>ID</th>
-                <th>姓名</th>
-                <th>操作</th>
-            </tr>
-        </thead>
-        <tr v-show="list.length ==0">
-            <td colspan="4">当前列表没有任何数据</td>
-        </tr>
-        <tr v-for="user in list" :key="user.id">
-            <td><input type="checkbox" /></td>
-            <td>{{ user.id }}</td>
-            <td>{{ user.name }}</td>
-            <td><a href="#" @click="deleteEle">删除</a></td>
-        </tr>
-    </table>
+  <table>
+    <thead>
+      <tr>
+        <th>选择</th>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tr v-show="list.length ==0">
+      <td colspan="4">当前列表没有任何数据</td>
+    </tr>
+    <tr v-for="user in list" :key="user.id">
+      <td><input type="checkbox" /></td>
+      <td>{{ user.id }}</td>
+      <td>{{ user.name }}</td>
+      <td><a href="#" @click="deleteEle">删除</a></td>
+    </tr>
+  </table>
 </div>
 ```
 
 ```javascript
 var app4 = new Vue({
-    el: '#app-4',
-    data: {
-        list: [{
-            id: 1,
-            name: '赵高'
-        },
-               {
-                   id: 2,
-                   name: '嬴政'
-               },
-               {
-                   id: 3,
-                   name: '李斯'
-               },
-               {
-                   id: 4,
-                   name: '荀子'
-               }
-              ],
-        id: 0,
-        name: null
+  el: '#app-4',
+  data: {
+    list: [{
+      id: 1,
+      name: '赵高'
     },
-    methods: {
-        add: function() { //添加方法
-            this.list.push({
-                id: this.id,
-                name: this.name
-            });
-        },
-        deleteEle: function(id) {
-            var index = this.list.findIndex(function(item) {
-                //根据item中的id属性来判断这个item是否是上面id中
-                //对应的数据，如果是返回一个true ,否返回false,继续下面的一条数据的遍历，以此类推
-                return item.id == id; //如果返回true，那么findIndex方法会将这个item对应的id返回到外面接受
-            });
-            //删除
-            this.list.splice(index, 1);
-        }
+    {
+        id: 2,
+        name: '嬴政'
+    },
+    {
+        id: 3,
+        name: '李斯'
+    },
+    {
+        id: 4,
+        name: '荀子'
     }
+  ],
+  id: 0,
+  name: null
+  },
+  methods: {
+    add: function() { //添加方法
+      this.list.push({
+        id: this.id,
+        name: this.name
+      });
+    },
+    deleteEle: function(id) {
+      var index = this.list.findIndex(function(item) {
+          //根据item中的id属性来判断这个item是否是上面id中
+          //对应的数据，如果是返回一个true ,否返回false,继续下面的一条数据的遍历，以此类推
+          return item.id == id; //如果返回true，那么findIndex方法会将这个item对应的id返回到外面接受
+      });
+      //删除
+      this.list.splice(index, 1);
+    }
+  }
 })
 ```
 
@@ -973,19 +970,19 @@ console.log(Vue.config.keyCodes)
 //注意:在定义指令时不需要加v-前缀但是使用时必须加v-前缀
 // 注册一个全局自定义指令 `v-focus`
 Vue.directive('focus', {
-    // 当被绑定的元素插入到 DOM 中时……
-    inserted: function(el) {
-        // 聚焦元素
-        el.focus()
-    }
+  // 当被绑定的元素插入到 DOM 中时……
+  inserted: function(el) {
+      // 聚焦元素
+      el.focus()
+  }
 })
 
 //定义一个v-color指令
 Vue.directive('color', {
-    // 当被绑定的元素被绑定时
-    bind: function(el,binding) {
-        el.style.color = binding.value;
-    }
+  // 当被绑定的元素被绑定时
+  bind: function(el,binding) {
+      el.style.color = binding.value;
+  }
 })
 ```
 
@@ -999,15 +996,15 @@ Vue.directive('color', {
 
 ```javascript
 var app4 = new Vue({
-    el: '#app-4',
-    data: {},
+  el: '#app-4',
+  data: {},
 	directives: {
-        focus: {
-            // 指令的定义
-            inserted: function(el) {
-                el.focus()
-         }
-     }
+    focus: {
+      // 指令的定义
+      inserted: function(el) {
+        el.focus()
+      }
+    }
 }
 ```
 
@@ -1140,21 +1137,21 @@ A request resolves to a response object with the following properties and method
 
 ```javascript
 new Vue({
-    el:'#app',
-    data:{
-        userList:null
-    },
-    methods:{
-        getdata:function(){
-            //请求的url
-            var url = 'https://www.layui.com/demo/table/user/';
-            //利用vue-resource发出Ajax请求
-            this.$http.get(url)//发出请求
-                .then(function(response){//获取服务器返回的数据
-                this.userList = response.body;//获取当前url响应回来的数据
-            });
-        }
+  el:'#app',
+  data:{
+      userList:null
+  },
+  methods:{
+    getdata:function(){
+      //请求的url
+      var url = 'https://www.layui.com/demo/table/user/';
+      //利用vue-resource发出Ajax请求
+      this.$http.get(url)//发出请求
+          .then(function(response){//获取服务器返回的数据
+          this.userList = response.body;//获取当前url响应回来的数据
+      });
     }
+  }
 })
 ```
 
@@ -1162,19 +1159,19 @@ new Vue({
 
 ```javascript
 new Vue({
-    el:'#app',
-    methods:{
-        postdata:function(){
-            //请求的url
-            var url = 'https://www.layui.com/demo/table/user/';
-            //利用vue-resource发出Ajax请求
-            //post有三个参数:post(url,传入服务器的请求报文体数据,{emulateJson:true})
-            this.$http.post(url,{name:'张三'},{emulateJson:true})//发出post请求
-                .then(function(response){//获取服务器返回的数据
-                console.log(response.body);//获取当前url响应回来的数据
-            });
-        }
+  el:'#app',
+  methods:{
+    postdata:function(){
+      //请求的url
+      var url = 'https://www.layui.com/demo/table/user/';
+      //利用vue-resource发出Ajax请求
+      //post有三个参数:post(url,传入服务器的请求报文体数据,{emulateJson:true})
+      this.$http.post(url,{name:'张三'},{emulateJson:true})//发出post请求
+          .then(function(response){//获取服务器返回的数据
+          console.log(response.body);//获取当前url响应回来的数据
+      });
     }
+  }
 })
 ```
 
@@ -1182,19 +1179,19 @@ new Vue({
 
 ```javascript
 new Vue({
-    el:'#app',
-    methods:{
-        jsonpdata:function(){
-            //请求的url
-            var url = 'https://www.layui.com/demo/table/user/';
-            //利用vue-resource发出Ajax请求
-            //url后不需要跟callback参数
-            this.$http.jsonp(url)
-                .then(function(response){//获取服务器返回的数据
-                console.log(response.body);//获取当前url响应回来的数据
-            });
-        }
+  el:'#app',
+  methods:{
+    jsonpdata:function(){
+      //请求的url
+      var url = 'https://www.layui.com/demo/table/user/';
+      //利用vue-resource发出Ajax请求
+      //url后不需要跟callback参数
+      this.$http.jsonp(url)
+        .then(function(response){//获取服务器返回的数据
+        console.log(response.body);//获取当前url响应回来的数据
+      });
     }
+  }
 })
 ```
 
@@ -1346,25 +1343,25 @@ updated: function () {
 
 ```javascript
 new Vue({
-    el:'#app',
-    data:{
-        userList:null
-    },
-    //Vue对象实例创建成功以后就会自定调用这个方法
-    created:function(){
-        this.getdata();
-    },
-    methods:{
-        getdata:function(){
-            //请求的url
-            var url = 'https://www.layui.com/demo/table/user/';
-            //利用vue-resource发出Ajax请求
-            this.$http.get(url)//发出请求
-                .then(function(response){//获取服务器返回的数据
-                this.userList = response.body;//获取当前url响应回来的数据
-            });
-        }
+  el:'#app',
+  data:{
+    userList:null
+  },
+  //Vue对象实例创建成功以后就会自定调用这个方法
+  created:function(){
+    this.getdata();
+  },
+  methods:{
+    getdata:function(){
+      //请求的url
+      var url = 'https://www.layui.com/demo/table/user/';
+      //利用vue-resource发出Ajax请求
+      this.$http.get(url)//发出请求
+          .then(function(response){//获取服务器返回的数据
+          this.userList = response.body;//获取当前url响应回来的数据
+      });
     }
+  }
 })
 
 ```
@@ -1395,34 +1392,34 @@ Vue 提供了 `transition` 的封装组件，在下列情形中，可以给任�
 ```css
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity .5s;
+  transition: opacity .5s;
 }
 
 .fade-enter,
 .fade-leave-to
 /* .fade-leave-active below version 2.1.8 */
 {
-    opacity: 0;
+  opacity: 0;
 }
 ```
 
 ```html
 <div id="demo">
     <button v-on:click="show = !show">
-        Toggle
+      Toggle
     </button>
     <transition name="fade">
-        <p v-if="show">hello</p>
+      <p v-if="show">hello</p>
     </transition>
 </div>
 ```
 
 ```javascript
 new Vue({
-    el: '#demo',
-    data: {
-        show: true
-    }
+  el: '#demo',
+  data: {
+    show: true
+  }
 })
 ```
 
@@ -1461,20 +1458,20 @@ https://daneden.github.io/animate.css/
 
 ```html
 <div id="app">
-    <button type="button" @click="show = !show">隐藏/显示</button>
+  <button type="button" @click="show = !show">隐藏/显示</button>
 
-    <transition enter-active-class='fadeInRight' leave-active-class='fadeOutRight'>
-        <p v-if="show" class="animated">Hello Animate css</p>
-    </transition>
+  <transition enter-active-class='fadeInRight' leave-active-class='fadeOutRight'>
+    <p v-if="show" class="animated">Hello Animate css</p>
+  </transition>
 </div>
 ```
 
 ```javascript
 new Vue({
-    el:'#app',
-    data:{
-        show:true
-    }
+  el:'#app',
+  data:{
+    show:true
+  }
 })
 ```
 
@@ -1484,47 +1481,47 @@ new Vue({
 
 ```css
 .show{
-    transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 ```
 
 ```html
 <div id="app">
-    <button type="button" @click="show = !show">隐藏/显示</button>
+  <button type="button" @click="show = !show">隐藏/显示</button>
 
-    <transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
-        <p v-if="show" class="show">Hello Animate css</p>
-    </transition>
+  <transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
+    <p v-if="show" class="show">Hello Animate css</p>
+  </transition>
 </div>
 ```
 
 ```javascript
 new Vue({
-    el:'#app',
-    data:{
-        show:true
+  el:'#app',
+  data:{
+      show:true
+  },
+  methods:{
+    //这里主要通过js定义当前实现动画的初始位置，el表示当前操作的元素
+    beforeEnter:function(el){
+      el.style.transform = "translate(100px,0)";
     },
-    methods:{
-        //这里主要通过js定义当前实现动画的初始位置，el表示当前操作的元素
-        beforeEnter:function(el){
-            el.style.transform = "translate(100px,0)";
-        },
-        //通过js定义动画的结束位置
-        enter:function(el,done){
-            //设置刷新状态
-            el.offsetWidth;
-			
-            //设置动画的结束位置
-            el.style.transform = "translate(0px,0)";
+    //通过js定义动画的结束位置
+    enter:function(el,done){
+      //设置刷新状态
+      el.offsetWidth;
 
-            //手动调用done,保证动画即时结束
-            done();
-        },
-        //动画的状态复原设置
-        afterEnter:function(el){
-            this.show = !this.show;
-        }
+      //设置动画的结束位置
+      el.style.transform = "translate(0px,0)";
+
+      //手动调用done,保证动画即时结束
+      done();
+    },
+    //动画的状态复原设置
+    afterEnter:function(el){
+      this.show = !this.show;
     }
+  }
 })
 ```
 
@@ -1601,7 +1598,7 @@ new Vue({ el: '#app' })
 ```javascript
 //方法1：定义组件
 var login = Vue.extend({
-    template:'<h1>登陆页面</h1>'
+  template:'<h1>登陆页面</h1>'
 })
 //注册组件
 Vue.component('login',login);
@@ -1618,7 +1615,7 @@ Vue.component('login',login);
 ```javascript
 //方法2：定义一个全局组件
 Vue.component('register',{
-    template:'<h1>注册页面</h1>'
+  template:'<h1>注册页面</h1>'
 })
 ```
 
@@ -1626,7 +1623,7 @@ Vue.component('register',{
 
 ```javascript
 <div id="app">
-    <register></register>
+  <register></register>
 </div>
 ```
 
@@ -1635,19 +1632,19 @@ Vue.component('register',{
 ```javascript
 //方法3：定义一个账号组件,建议使用方法三
 Vue.component('account',{
-    template:'#account',
-    data:function(){
-        //与vue对象不同的是组件中的data是一个function,
-        //所以要这么写
-        return {
-            message:'账户组件'
-        }
-    },
-    methods:{
-        login:function(){
-            alert("Hello VueJs")
-        }
+  template:'#account',
+  data:function(){
+    //与vue对象不同的是组件中的data是一个function,
+    //所以要这么写
+    return {
+      message:'账户组件'
     }
+  },
+  methods:{
+    login:function(){
+      alert("Hello VueJs")
+    }
+  }
 })
 ```
 
@@ -1658,11 +1655,11 @@ Vue.component('account',{
 ```html
 <!--组件模板的定义 template和script定义都可以但是建议使用template-->
 <template id="account">
-    <div>
-        {{message}}
-        <a href="#" @click.prevent="login">登陆</a> |
-        <a href="#">注册</a>
-    </div>
+  <div>
+    {{message}}
+    <a href="#" @click.prevent="login">登陆</a> |
+    <a href="#">注册</a>
+  </div>
 </template>
 ```
 
@@ -1708,13 +1705,13 @@ new Vue({
 ```javascript
 //定义一个账号组件
 Vue.component('account',{
-    template:'<div><h1>账号组件</h1><login></login></div>',
-    //在账号组件中定义一个登陆子组件
-    components:{
-        'login':{
-            template:'<h2>登陆子组件</h2>'
-        }
-    }
+  template:'<div><h1>账号组件</h1><login></login></div>',
+  //在账号组件中定义一个登陆子组件
+  components:{
+      'login':{
+          template:'<h2>登陆子组件</h2>'
+      }
+  }
 })
 ```
 
@@ -1732,22 +1729,22 @@ Vue.component('account',{
 
 ```javascript
 Vue.component('login',{
-    template:'<h1>登陆页面</h1>'
+  template:'<h1>登陆页面</h1>'
 })
 ```
 
 ```javascript
 Vue.component('regist',{
-    template:'<h1>注册页面</h1>'
+  template:'<h1>注册页面</h1>'
 })		
 ```
 
 ```html
 <div id="app">
-    <a href="#" @click.prevent="cname = 'login'">登陆</a> |
-    <a href="#" @click.prevent="cname = 'regist'">注册</a>
-    <!-- 利用component标签中的：is参数来进行组件的切换 -->
-    <component :is="cname"></component>
+  <a href="#" @click.prevent="cname = 'login'">登陆</a> |
+  <a href="#" @click.prevent="cname = 'regist'">注册</a>
+  <!-- 利用component标签中的：is参数来进行组件的切换 -->
+  <component :is="cname"></component>
 </div>
 ```
 
@@ -1755,10 +1752,10 @@ Vue.component('regist',{
 
 ```javascript
 new Vue({
-    el:'#app',
-    data:{
-        cname:'login'
-    }
+  el:'#app',
+  data:{
+    cname:'login'
+  }
 })
 ```
 
@@ -1772,24 +1769,24 @@ new Vue({
 
 ```html
 <template id="subEle">
-    <div>
-        {{name}}
-    </div>
+  <div>
+    {{name}}
+  </div>
 </template>
 ```
 
 ```javascript
 new Vue({
-    el:'#app',
-    data:{
-        name:'张三'
-    },
-    components:{
-        'subelement':{
-            template:'#subEle',
-            props:['name']//负责接收父组件传入的值
-        }
+  el:'#app',
+  data:{
+    name:'张三'
+  },
+  components:{
+    'subelement':{
+      template:'#subEle',
+      props:['name']//负责接收父组件传入的值
     }
+  }
 })
 ```
 
@@ -1811,27 +1808,27 @@ new Vue({
 
 ```javascript
 new Vue({
-    el:'#app',
-    data:{
-        name:'张三'
-    },
-    methods:{
-        getdata:function(data){
-            alert(data)
-        }
-    },
-    components:{
-        'subelement':{
-            template:'#subEle',
-            //props:['name']//负责接收父组件传入的值
-            methods:{
-                sendData:function(){
-                    //将hello传值给父组件
-                    this.$emit('send','Hello VueJs')
-                }
-            }
-        }
+  el:'#app',
+  data:{
+    name:'张三'
+  },
+  methods:{
+    getdata:function(data){
+      alert(data)
     }
+  },
+  components:{
+    'subelement':{
+      template:'#subEle',
+      //props:['name']//负责接收父组件传入的值
+      methods:{
+        sendData:function(){
+          //将hello传值给父组件
+          this.$emit('send','Hello VueJs')
+        }
+      }
+    }
+  }
 })
 ```
 
@@ -1841,7 +1838,7 @@ new Vue({
 
 ```javascript
 <template id="subEle">
-    <button type="button" @click="sendData">点击传值</button>
+  <button type="button" @click="sendData">点击传值</button>
 </template>
 ```
 
@@ -1851,7 +1848,7 @@ new Vue({
 
 ```html
 <div id="app">
-    <subelement v-on:send="getdata"></subelement>
+  <subelement v-on:send="getdata"></subelement>
 </div>
 ```
 
@@ -1859,9 +1856,9 @@ new Vue({
 
 ```javascript
 methods:{
-    getdata:function(data){
-        alert(data)
-    }
+  getdata:function(data){
+    alert(data)
+  }
 }
 ```
 
@@ -1893,33 +1890,33 @@ methods:{
 
 ```javascript
 new Vue({
-    el:'#app',
-    methods:{
-        getdom:function(){
-            //获取到id="div1"的div对象
-            //有两种方式可以完成
-            //1.通过传统的document方式
-            console.log(document.getElementById("div1").innerHTML)
+  el:'#app',
+  methods:{
+    getdom:function(){
+      //获取到id="div1"的div对象
+      //有两种方式可以完成
+      //1.通过传统的document方式
+      console.log(document.getElementById("div1").innerHTML)
 
-            //2.vuejs的写法,在元素上添加v-el
-            console.log(this.$refs.myDiv)
-        },
-        getComponents:function(){
-            //获取组件对象
-            console.log(this.$refs.mycomponents)
-            //获取组件中的值
-            console.log(this.$refs.mycomponents.subname)
-        }
+      //2.vuejs的写法,在元素上添加v-el
+      console.log(this.$refs.myDiv)
     },
-    //定义私有组件(子组件)
-    components:{
-        'login':{
-            data:function(){
-                return {subname:'这是一个组件名称'}
-            },
-            template:'<h1>这是一个子组件</h1>'
-        }
+    getComponents:function(){
+      //获取组件对象
+      console.log(this.$refs.mycomponents)
+      //获取组件中的值
+      console.log(this.$refs.mycomponents.subname)
     }
+  },
+  //定义私有组件(子组件)
+  components:{
+    'login':{
+      data:function(){
+        return {subname:'这是一个组件名称'}
+      },
+      template:'<h1>这是一个子组件</h1>'
+    }
+  }
 })
 ```
 
@@ -1950,50 +1947,50 @@ Vue Router 是 [Vue.js](http://cn.vuejs.org/) 官方的路由管理器。它和 
 var Ap = Vue.extend({});
 
 var login = Vue.extend({
-    template:'<div><h1>登陆</h1></div>'
+  template:'<div><h1>登陆</h1></div>'
 })
 
 var regist = Vue.extend({
-    template:'<div><h1>注册{{name}}</h1></div>',
-    data:function(){
-        return {
-            name:''
-        }
-    },
-    created:function() {//在页面渲染是将参数赋值给name
-        this.name = this.$route.params.name
+  template:'<div><h1>注册{{name}}</h1></div>',
+  data:function(){
+    return {
+      name:''
     }
+  },
+  created:function() {//在页面渲染是将参数赋值给name
+    this.name = this.$route.params.name
+  }
 })
 
 //实例化路由规则对象
 var router = new VueRouter({
     routes:[
-        {path:'/',redirect:'/login'},//如果是/则自动重定向到login
-        {path:'/login',component:login},
-        {path:'/regist/:name',component:regist}//获取参数
+      {path:'/',redirect:'/login'},//如果是/则自动重定向到login
+      {path:'/login',component:login},
+      {path:'/regist/:name',component:regist}//获取参数
     ]
 });
 
 //开启路由对象
 new Vue({
-    el:'#app',
-    router:router//开启路由对象
+  el:'#app',
+  router:router//开启路由对象
 })
 ```
 
 ```html
 <div id="app">
-    <!-- 使用 router-link 组件来导航. -->
-    <!-- 通过传入 `to` 属性指定链接. -->
-    <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
-    <router-link to="/login">登陆</router-link>
-    
-    <!--通过router-link指定参数 -->
-    <router-link to="/regist/zhangsan">注册</router-link>
+  <!-- 使用 router-link 组件来导航. -->
+  <!-- 通过传入 `to` 属性指定链接. -->
+  <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+  <router-link to="/login">登陆</router-link>
+  
+  <!--通过router-link指定参数 -->
+  <router-link to="/regist/zhangsan">注册</router-link>
 
-    <!-- 路由出口 -->
+  <!-- 路由出口 -->
  	<!-- 路由匹配到的组件将渲染在这里 -->
-    <router-view></router-view>
+  <router-view></router-view>
 </div>
 ```
 
@@ -2018,28 +2015,28 @@ var regist = Vue.extend({
 
 //实例化路由规则对象
 var router = new VueRouter({
-    routes:[
+  routes:[
+    {
+      path:'/account',
+      component:account,
+      children:[
         {
-            path:'/account',
-            component:account,
-            children:[
-                {
-                    path:'login',
-                    component:login
-                },
-                {
-                    path:'regist',
-                    component:regist
-                }
-            ]
+          path:'login',
+          component:login
+        },
+        {
+          path:'regist',
+          component:regist
         }
-    ]
+      ]
+    }
+  ]
 });
 
 //开启路由对象
 new Vue({
-    el:'#app',
-    router:router//开启路由对象
+  el:'#app',
+  router:router//开启路由对象
 })
 ```
 
@@ -2318,12 +2315,12 @@ npm install url-loader file-loader --save-dev
 
 ```javascript
 {
-    test: /\.(png|jpe?g|gif|svg|ttf|bmp)(\?.*)?$/,
-        loader: 'url-loader',
-            options: {
-                limit: 1000,
-                    name: 'img/[name].[hash:7].[ext]'
-            }
+  test: /\.(png|jpe?g|gif|svg|ttf|bmp)(\?.*)?$/,
+  loader: 'url-loader',
+  options: {
+    limit: 1000,
+    name: 'img/[name].[hash:7].[ext]'
+  }
 }
 ```
 
@@ -2382,11 +2379,11 @@ webpack-dev-server要实现浏览器自动刷新，必须要利用html-webpack-p
 var htmlwp = require('html-webpack-plugin');
 
 plugins:[
-    new htmlwp({
-        title:'首页',//生成的页面标题
-        filename:'index.html',//webpack-dev-server在内存中生成的文件名称，自动将build.js注入到这个页面底部
-        template:'index1.html'//更具index1.html这个模板生成（这个文件由程序员自己定义）
-    })
+  new htmlwp({
+    title:'首页',//生成的页面标题
+    filename:'index.html',//webpack-dev-server在内存中生成的文件名称，自动将build.js注入到这个页面底部
+    template:'index1.html'//更具index1.html这个模板生成（这个文件由程序员自己定义）
+  })
 ]
 ```
 
@@ -2422,13 +2419,13 @@ module.exports={
 				loader:'style-loader!css-loader!less-loader'
 			},
 			{
-                test: /\.(png|jpe?g|gif|svg|ttf|bmp)(\?.*)?$/,
-                loader: 'url-loader',
-                options: {
-                    limit: 1000,
-                    name: 'img/[name].[hash:7].[ext]'
-                }
-            }
+        test: /\.(png|jpe?g|gif|svg|ttf|bmp)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 1000,
+          name: 'img/[name].[hash:7].[ext]'
+        }
+      }
 		]
 	},
 	plugins:[
@@ -2459,11 +2456,11 @@ npm install babel-core babel-loader@6.4.1 babel-preset-es2015 babel-plugin-trans
 
 ```javascript
 loaders:[{
-    //将当前项目中所有的.js文件都要进行es6转es5操作，node_moudels除外
-    test:/\.js$/,//表示当前打包的文件后缀的正则表达式
-    //loader:'babel-loader?presets[]=es2015',//如果写到这里将来在打包.vue文件的时候会报错，表示先利用css-loader解析.css文件，在调用style-loader打包
-    loader:'babel-loader',
-    exclude:/node_modules/  //node_modules中的所有.js文件不去转换，提高打包性能
+  //将当前项目中所有的.js文件都要进行es6转es5操作，node_moudels除外
+  test:/\.js$/,//表示当前打包的文件后缀的正则表达式
+  //loader:'babel-loader?presets[]=es2015',//如果写到这里将来在打包.vue文件的时候会报错，表示先利用css-loader解析.css文件，在调用style-loader打包
+  loader:'babel-loader',
+  exclude:/node_modules/  //node_modules中的所有.js文件不去转换，提高打包性能
 }],
 babel:{
    presets:['es2015'],
@@ -2570,8 +2567,8 @@ npm install vue --save
 
 ```javascript
 babel:{
-    presets:['es2015'],
-    plugins:['transform-runtime']//这句话就是为了解决打包.vue文件不报错
+  presets:['es2015'],
+  plugins:['transform-runtime']//这句话就是为了解决打包.vue文件不报错
 }
 ```
 
@@ -2581,8 +2578,8 @@ babel:{
 
 ```javascript
 {
-    presets:['es2015'],
-    plugins:['transform-runtime']//这句话就是为了解决打包.vue文件不报错
+  presets:['es2015'],
+  plugins:['transform-runtime']//这句话就是为了解决打包.vue文件不报错
 }
 ```
 
@@ -2590,17 +2587,17 @@ babel:{
 
 ```javascript
 {
-    //打包
-    test:/\.vue$/,
-    loader:'vue-loader'
+  //打包
+  test:/\.vue$/,
+  loader:'vue-loader'
 }
 ```
 
 ## 12 搭建webpack1.14.0+Vue2.6.0的HelloWorld
 
 **App.vue文件**
-
-```vue
+::: demo
+```html
 <!-- 以后项目的根组件 -->
 <template>
 	<!-- 主要放html页面结构 -->
@@ -2626,14 +2623,14 @@ babel:{
 	}
 </script>
 
-<style scoped>
-	/* 当前页面的css样式写到这里,其中scoped表示这个里面的css代码只是在当前组件页面有效,不会去影响到其他组件页面 */
+<style>
+	/* 可以添加scoped属性，如<style scoped>当前页面的css样式写到这里,其中scoped表示这个里面的css代码只是在当前组件页面有效,不会去影响到其他组件页面 */
 	.red{
 		color:red;
 	}
 </style>
 ```
-
+:::
 **main.js文件**
 
 ```javascript
