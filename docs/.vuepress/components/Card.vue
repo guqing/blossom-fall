@@ -9,8 +9,7 @@
       <div class="post-module">
         <!--缩略图-->
         <div class="thumbnail">
-          <img :src="item.thumbnail" width="100%" height="100%" />
-          <!-- http://www.bluestep.cc/demos/html5css3/p3892/img/demo.jpg -->
+          <img :src="getThumbnail(item.thumbnail)" width="100%" height="100%" />
         </div>
         <div class="post-content">
           <div class="category">{{ index + 1 }}</div>
@@ -32,6 +31,14 @@ export default {
       default: function () {
         return []
       }
+    }
+  },
+  methods: {
+    getThumbnail (src) {
+      if (src === '' || src === null || src === undefined) {
+        src = 'http://www.bluestep.cc/demos/html5css3/p3892/img/demo.jpg'
+      }
+      return src
     }
   }
 }
