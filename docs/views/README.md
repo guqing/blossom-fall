@@ -15,6 +15,12 @@ export default {
           content: 'Java web 基础学习笔记',
           thumbnail: '/thumbnail/c36a66235ba6e80fd6.jpg'
         },
+         {
+          url: '/views/git/git.html',
+          title: 'Git',
+          content: 'Git 学习笔记',
+          thumbnail: '/thumbnail/2134131312313123.jpg'
+        },
         {
           url: '/views/spring/spring.html',
           title: 'Spring',
