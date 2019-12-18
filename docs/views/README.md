@@ -22,6 +22,12 @@ export default {
           thumbnail: '/thumbnail/2134131312313123.jpg'
         },
         {
+          url: '/views/java8/features.html',
+          title: 'Java 8 新特性',
+          content: 'Java 8是 Java 语言开发的一个主要版本。 Oracle 公司于2014年3月18日发布Java 8 ，它支持函数式编程，新的JavaScript引擎，新的日期 API，新的Stream API 等。',
+          thumbnail: '/thumbnail/2293557818,998570268.jpg'
+        },
+        {
           url: '/views/spring/spring.html',
           title: 'Spring',
           content: 'Spring是一个轻量级控制反转(IoC)和面向切面(AOP)的容器框架，为依赖项注入，事务管理，Web应用程序，数据访问，消息传递等提供核心支持。',
