@@ -547,7 +547,7 @@ public class StreamIteratorDemo {
 
 执行它。
 
-![1563871218155](assets/1563871218155.png)
+![1563871218155](./assets/1563871218155.png)
 
 这张图中展示了过滤、映射、跳过、计数等多步操作，这是一种集合元素的处理方案，而方案就是一种“函数模型”。图中的每一个方框都是一个“流”，调用指定的方法，可以从一个流模型转换为另一个流模型。而最右侧的数字3是最终结果。
 
@@ -621,7 +621,7 @@ Stream<String> helloStringStream = Stream.of(helloString);
 
 ### 常用方法
 
-![1563882908798](assets/1563882908798.png)
+![1563882908798](./assets/1563882908798.png)
 
 流模型的操作很丰富，这里介绍一些常用的`APl`。这些方法可以被分成两种：
 
@@ -662,7 +662,7 @@ Stream<T> filter(Predicate<? super T> predicate);
 
 法引用）作为筛选条件。
 
-![1563883556434](assets/1563883556434.png)
+![1563883556434](./assets/1563883556434.png)
 
 此前已经学习过`java.util.stream.Predicate`函数式接口，其中的方法为：
 
@@ -724,7 +724,7 @@ Exception in thread "main" java.lang.IllegalStateException: stream has already b
 
 该接口需要一个`Function`函数式接口参数，可以将当前流中的`T`类型数据转换为另一种`R`类型的流。
 
-![1563884572297](assets/1563884572297.png)
+![1563884572297](./assets/1563884572297.png)
 
 此前我们已经学习过`java.util.stream.Function`函数式接口，其中唯一的抽象方法为：
 
@@ -791,7 +791,7 @@ Stream<T> limit(long maxsize);
 
 参数是一个`long`型，如果集合当前长度大于参数则进行截取；否则不进行操作。基本使用：
 
-![1563885889142](assets/1563885889142.png)
+![1563885889142](./assets/1563885889142.png)
 
 ```java
 public class StreamLimitDemo {
@@ -822,7 +822,7 @@ Stream<T> skip(long n);
 
 如果流的当前长度大于n，则跳过前n个；否则将会得到一个长度为0的空流。基本使用：
 
-![1563886346829](assets/1563886346829.png)
+![1563886346829](./assets/1563886346829.png)
 
 ```java
 /**
