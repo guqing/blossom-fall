@@ -9,7 +9,7 @@
       <div class="post-module">
         <!--缩略图-->
         <div class="thumbnail">
-          <img :src="getThumbnail(item.thumbnail)" width="100%" height="100%" />
+          <img :src="getThumbnail(item.thumbnail)" />
         </div>
         <div class="post-content">
           <div class="category">{{ index + 1 }}</div>
@@ -97,13 +97,15 @@ export default {
 }
 .post-module .thumbnail {
   background: #000000;
-  height: 320px;
+  width: 100%;
+  height: 150px;
   overflow: hidden;
 }
 
 .post-module .thumbnail img {
   display: block;
-  width: 120%;
+  width: 100%;
+  height: 100%;
   -webkit-transition: all 0.3s linear 0s;
   -moz-transition: all 0.3s linear 0s;
   -ms-transition: all 0.3s linear 0s;
