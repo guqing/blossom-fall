@@ -63,6 +63,12 @@ export default {
           content: 'Spring Boot是一个为了简化Spring开发的框架。用来监护spring应用开发，约定大于配置，去繁就简，just run 就能创建一个独立的，产品级的应用。',
           thumbnail: '/thumbnail/2fd74dcb35be6d44.jpg'
         },
+         {
+          url: '/views/spring-data-jpa/jpa.html',
+          title: 'Spring Data Jpa',
+          content: 'Spring data Jpa是对JPA规范的再次封装抽象，底层使用了Hibernate的JPA技术实现，引用JPQ查询语言，属于Spring整个生态体系的一部分。',
+          thumbnail: '/thumbnail/12341839113131.jpeg'
+        },
         {
           url: '/views/vue/vue.html',
           title: 'Vuejs',
