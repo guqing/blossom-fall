@@ -1079,8 +1079,8 @@ acorn-dynamic-import@^4.0.0:
   resolved "https://registry.yarnpkg.com/acorn-dynamic-import/-/acorn-dynamic-import-4.0.0.tgz#482210140582a36b83c3e342e1cfebcaa9240948"
 
 acorn@^6.0.5:
-  version "6.1.1"
-  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.1.1.tgz#7d25ae05bb8ad1f9b699108e1094ecd7884adc1f"
+  version "6.4.1"
+  resolved "https://registry.yarnpkg.com/acorn/-/acorn-6.4.1.tgz#531e58ba3f51b9dacb9a6646ca4debf5b14ca474"
 
 agentkeepalive@^2.2.0:
   version "2.2.0"
@@ -6610,6 +6610,10 @@ vuepress-plugin-container@^2.0.2:
   resolved "https://registry.yarnpkg.com/vuepress-plugin-container/-/vuepress-plugin-container-2.1.0.tgz#eb2ba3e01cdac419bd678d40e05c934caffe6db0"
   dependencies:
     markdown-it-container "^2.0.0"
+
+vuepress-plugin-demo-block@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-demo-block/-/vuepress-plugin-demo-block-0.7.2.tgz#02fc4f0ef764052981accf41f1403fdb9f794c0d"
 
 vuepress-plugin-smooth-scroll@^0.0.3:
   version "0.0.3"
