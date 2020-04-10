@@ -15,6 +15,12 @@ export default {
           content: 'Java web 基础学习笔记',
           thumbnail: '/thumbnail/c36a66235ba6e80fd6.jpg'
         },
+        {
+          url: '/views/datastructure/algorithms.html',
+          title: '数据结构与算法',
+          content: '数据结构与算法是程序的灵魂,是朴素的基础,学好它有有助于理解各种上层抽象,它是程序员的内功心法和基本功。',
+          thumbnail: '/thumbnail/datastructure.jpg'
+        },
          {
           url: '/views/git/git.html',
           title: 'Git',
