@@ -7,10 +7,10 @@
     "build": "vuepress build docs"
   },
   "devDependencies": {
-    "prismjs": "^1.17.1",
-    "vuepress": "1.2.0",
+    "prismjs": "^1.20.0",
+    "vuepress": "1.5.0",
     "vuepress-plugin-demo-block": "^0.7.2",
-    "vuepress-theme-reco": "1.1.1"
+    "vuepress-theme-reco": "1.4.6"
   },
   "description": "a Java notes guide"
 }
