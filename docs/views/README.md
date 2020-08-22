@@ -92,6 +92,12 @@ export default {
           title: 'Docker',
           content: 'Docker是一个开源的引擎，可以轻松的为任何应用创建一个轻量级的、可移植的、自给自足的容器。开发者在电脑上编译测试通过的容器可以批量地在生产环境中部署。',
           thumbnail: '/thumbnail/1hl1evnkof.jpeg'
+        },
+        {
+          url: '/views/leetcode/LeetCode.html',
+          title: 'LeetCode刷题',
+          content: '算法模板，以科学的刷题方式，最快的刷题路径刷题',
+          thumbnail: '/thumbnail/leetcode.png'
         }]
     }
   }
