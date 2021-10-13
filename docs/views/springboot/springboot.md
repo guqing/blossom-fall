@@ -917,7 +917,7 @@ List<String> configurations = this.getCandidateConfigurations(annotationMetadata
  List<String> configurations = SpringFactoriesLoader.loadFactoryNames(this.getSpringFactoriesLoaderFactoryClass(), this.getBeanClassLoader());
 ```
 
-通过`SpringFactoriesLoader.loadFactoryNames`扫面类路径下的`META-INF/spring.factories`,（`org.springframework.boot:spring-boot-autoconfigure:2.1.3.RELEASE/META-INF/spring.factories`）然后把扫描到的这些文件的内容包装成`properties`对象,然后通过`properties`对象来获取`EnableAutoConfiguration.class类`（类名）对应的值，然后把他们添加到容器中。
+通过`SpringFactoriesLoader.loadFactoryNames`扫描类路径下的`META-INF/spring.factories`,（`org.springframework.boot:spring-boot-autoconfigure:2.1.3.RELEASE/META-INF/spring.factories`）然后把扫描到的这些文件的内容包装成`properties`对象,然后通过`properties`对象来获取`EnableAutoConfiguration.class类`（类名）对应的值，然后把他们添加到容器中。
 
 总结就是将类路径下的`META-INF/spring.factories`里面配置的所有`EnableAutoConfiguration`的值加入到容器中。
 
@@ -1100,7 +1100,7 @@ public class HttpProperties {}
 
 ### 精髓：
 
-1. springboot启动回家再大量的自动配置类
+1. springboot启动会加载大量的自动配置类
 2. 我们看需要的功能有没有SpringBoot默认写好的自动配置类
 3. 如果有，在看这个自动配置类中到底配置了哪些组件，只要我们需要用的组件存在，就不需要再来配置了，如果没有就需要自己写一个配置类
 4. 给容器中自动配置类添加组件的时候会从properties类中获取某些属性，我们就可以在配置文件中指定这些属性的值
@@ -2880,7 +2880,7 @@ public WebServer getWebServer(ServletContextInitializer... initializers) {
     }
 
     this.prepareContext(tomcat.getHost(), initializers);
-    //将配置好的Tomcat传入禁区，返回一个TomcatWebServe
+    //将配置好的Tomcat传入进去，返回一个TomcatWebServe
     return this.getTomcatWebServer(tomcat);
 }
 ```
@@ -3023,7 +3023,7 @@ protected ConfigurableApplicationContext createApplicationContext() {
 }
 ```
 
-3. refresh(context)`:刷新刚才创建好的IOC容器
+3. `refresh(context)`:刷新刚才创建好的IOC容器
 
 ```java
 public void refresh() throws BeansException, IllegalStateException {
