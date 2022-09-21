@@ -10,7 +10,7 @@
     "prismjs": "^1.27.0",
     "vuepress": "1.2.0",
     "vuepress-plugin-demo-block": "^0.7.2",
-    "vuepress-theme-reco": "1.1.1"
+    "vuepress-theme-reco": "1.6.14"
   },
   "description": "a Java notes guide"
 }
